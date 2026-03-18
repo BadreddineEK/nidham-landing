@@ -9,199 +9,232 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Amiri:wght@400;700&display=swap" rel="stylesheet" />
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root {
-      --green:#1B4332; --green-mid:#2D6A4F; --green-light:#40916C; --green-pale:#D8F3DC;
-      --gold:#C9A84C; --gold-light:#F0D080; --dark:#0D1B12; --text:#1A2E1F;
-      --muted:#5A7A63; --bg:#F7FAF8; --white:#FFFFFF; --border:#D4E8DB;
-      --radius:12px; --radius-lg:20px;
-      --shadow:0 4px 24px rgba(27,67,50,0.10); --shadow-lg:0 8px 48px rgba(27,67,50,0.16);
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --green:#1B4332;--green-mid:#2D6A4F;--green-light:#40916C;--green-pale:#D8F3DC;
+      --gold:#C9A84C;--gold-light:#F0D080;--dark:#0D1B12;--text:#1A2E1F;
+      --muted:#5A7A63;--bg:#F7FAF8;--white:#FFFFFF;--border:#D4E8DB;
+      --radius:12px;--radius-lg:20px;
+      --shadow:0 4px 24px rgba(27,67,50,.10);--shadow-lg:0 8px 48px rgba(27,67,50,.16);
     }
-    html { scroll-behavior: smooth; }
-    body { font-family:'Inter',sans-serif; background:var(--bg); color:var(--text); line-height:1.6; overflow-x:hidden; }
+    html{scroll-behavior:smooth}
+    body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
 
     /* NAV */
-    nav { position:fixed; top:0; left:0; right:0; z-index:100; display:flex; align-items:center; justify-content:space-between; padding:0 5%; height:68px; background:rgba(247,250,248,0.92); backdrop-filter:blur(12px); border-bottom:1px solid var(--border); }
-    .nav-logo { display:flex; align-items:center; gap:10px; font-size:1.4rem; font-weight:700; color:var(--green); text-decoration:none; }
-    .nav-logo .arabic { font-family:'Amiri',serif; font-size:1.3rem; color:var(--gold); }
-    .nav-links { display:flex; align-items:center; gap:28px; }
-    .nav-links a { color:var(--muted); text-decoration:none; font-size:0.9rem; font-weight:500; transition:color .2s; }
-    .nav-links a:hover { color:var(--green); }
-    .nav-cta { background:var(--green); color:var(--white)!important; padding:8px 20px; border-radius:8px; font-weight:600!important; transition:background .2s!important; }
-    .nav-cta:hover { background:var(--green-mid)!important; }
+    nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 5%;height:68px;background:rgba(247,250,248,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+    .nav-logo{display:flex;align-items:center;gap:10px;font-size:1.4rem;font-weight:700;color:var(--green);text-decoration:none}
+    .nav-logo .arabic{font-family:'Amiri',serif;font-size:1.3rem;color:var(--gold)}
+    .nav-links{display:flex;align-items:center;gap:28px}
+    .nav-links a{color:var(--muted);text-decoration:none;font-size:.9rem;font-weight:500;transition:color .2s}
+    .nav-links a:hover{color:var(--green)}
+    .nav-cta{background:var(--green);color:var(--white)!important;padding:8px 20px;border-radius:8px;font-weight:600!important;transition:background .2s!important}
+    .nav-cta:hover{background:var(--green-mid)!important}
 
     /* HERO */
-    .hero { min-height:100vh; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:120px 5% 80px; background:linear-gradient(160deg,#0D1B12 0%,#1B4332 45%,#2D6A4F 100%); position:relative; overflow:hidden; }
-    .hero::before { content:'نِظَام'; font-family:'Amiri',serif; position:absolute; font-size:40vw; color:rgba(255,255,255,0.03); top:50%; left:50%; transform:translate(-50%,-50%); pointer-events:none; line-height:1; }
-    .hero-badge { display:inline-flex; align-items:center; gap:8px; background:rgba(201,168,76,0.15); border:1px solid rgba(201,168,76,0.3); color:var(--gold-light); padding:6px 16px; border-radius:100px; font-size:0.82rem; font-weight:500; margin-bottom:28px; letter-spacing:0.04em; }
-    .hero-badge .dot { width:6px; height:6px; background:var(--gold); border-radius:50%; }
-    .hero h1 { font-size:clamp(2.4rem,6vw,4.2rem); font-weight:700; color:var(--white); line-height:1.15; margin-bottom:20px; max-width:820px; }
-    .hero h1 span { color:var(--gold-light); }
-    .hero > p { font-size:clamp(1rem,2vw,1.2rem); color:rgba(255,255,255,0.72); max-width:600px; margin-bottom:44px; font-weight:300; }
-    .hero-actions { display:flex; gap:16px; flex-wrap:wrap; justify-content:center; }
-    .btn-primary { background:var(--gold); color:var(--dark); padding:14px 32px; border-radius:10px; font-weight:700; font-size:1rem; text-decoration:none; border:none; cursor:pointer; transition:background .2s,transform .15s; display:inline-flex; align-items:center; gap:8px; }
-    .btn-primary:hover { background:var(--gold-light); transform:translateY(-2px); }
-    .btn-secondary { background:rgba(255,255,255,0.08); color:var(--white); padding:14px 32px; border-radius:10px; font-weight:600; font-size:1rem; text-decoration:none; border:1px solid rgba(255,255,255,0.2); cursor:pointer; transition:background .2s,transform .15s; }
-    .btn-secondary:hover { background:rgba(255,255,255,0.14); transform:translateY(-2px); }
-    .hero-stats { display:flex; gap:48px; margin-top:72px; flex-wrap:wrap; justify-content:center; }
-    .stat { text-align:center; }
-    .stat-num { font-size:2rem; font-weight:700; color:var(--white); line-height:1; }
-    .stat-label { font-size:0.82rem; color:rgba(255,255,255,0.5); margin-top:4px; font-weight:400; }
+    .hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:120px 5% 80px;background:linear-gradient(160deg,#0D1B12 0%,#1B4332 45%,#2D6A4F 100%);position:relative;overflow:hidden}
+    .hero::before{content:'نِظَام';font-family:'Amiri',serif;position:absolute;font-size:40vw;color:rgba(255,255,255,.03);top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;line-height:1}
+    .hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(201,168,76,.15);border:1px solid rgba(201,168,76,.3);color:var(--gold-light);padding:6px 16px;border-radius:100px;font-size:.82rem;font-weight:500;margin-bottom:28px;letter-spacing:.04em}
+    .hero-badge .dot{width:6px;height:6px;background:var(--gold);border-radius:50%}
+    .hero h1{font-size:clamp(2.4rem,6vw,4.2rem);font-weight:700;color:var(--white);line-height:1.15;margin-bottom:20px;max-width:820px}
+    .hero h1 span{color:var(--gold-light)}
+    .hero>p{font-size:clamp(1rem,2vw,1.2rem);color:rgba(255,255,255,.72);max-width:600px;margin-bottom:44px;font-weight:300}
+    .hero-actions{display:flex;gap:16px;flex-wrap:wrap;justify-content:center}
+    .btn-primary{background:var(--gold);color:var(--dark);padding:14px 32px;border-radius:10px;font-weight:700;font-size:1rem;text-decoration:none;border:none;cursor:pointer;transition:background .2s,transform .15s;display:inline-flex;align-items:center;gap:8px}
+    .btn-primary:hover{background:var(--gold-light);transform:translateY(-2px)}
+    .btn-secondary{background:rgba(255,255,255,.08);color:var(--white);padding:14px 32px;border-radius:10px;font-weight:600;font-size:1rem;text-decoration:none;border:1px solid rgba(255,255,255,.2);cursor:pointer;transition:background .2s,transform .15s}
+    .btn-secondary:hover{background:rgba(255,255,255,.14);transform:translateY(-2px)}
+    .hero-stats{display:flex;gap:48px;margin-top:72px;flex-wrap:wrap;justify-content:center}
+    .stat{text-align:center}
+    .stat-num{font-size:2rem;font-weight:700;color:var(--white);line-height:1}
+    .stat-label{font-size:.82rem;color:rgba(255,255,255,.5);margin-top:4px;font-weight:400}
 
     /* SECTIONS */
-    section { padding:96px 5%; }
-    .section-tag { display:inline-block; background:var(--green-pale); color:var(--green-mid); padding:5px 14px; border-radius:100px; font-size:0.8rem; font-weight:600; letter-spacing:0.06em; text-transform:uppercase; margin-bottom:16px; }
-    h2 { font-size:clamp(1.8rem,4vw,2.8rem); font-weight:700; color:var(--dark); line-height:1.2; margin-bottom:16px; }
-    .section-sub { font-size:1.1rem; color:var(--muted); max-width:560px; font-weight:400; }
-    .section-header { margin-bottom:64px; }
+    section{padding:96px 5%}
+    .section-tag{display:inline-block;background:var(--green-pale);color:var(--green-mid);padding:5px 14px;border-radius:100px;font-size:.8rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;margin-bottom:16px}
+    h2{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:700;color:var(--dark);line-height:1.2;margin-bottom:16px}
+    .section-sub{font-size:1.05rem;color:var(--muted);max-width:600px;font-weight:400}
+    .section-header{margin-bottom:64px;text-align:center}
+    .section-header .section-sub{margin:0 auto}
 
     /* PROBLÈME */
-    .problem { background:var(--white); }
-    .problems-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:24px; }
-    .problem-card { background:#FFF8F0; border:1px solid #FFE0B2; border-radius:var(--radius); padding:28px 24px; }
-    .problem-card .icon { font-size:2rem; margin-bottom:14px; }
-    .problem-card h3 { font-size:1rem; font-weight:600; color:#7C3A00; margin-bottom:8px; }
-    .problem-card p { font-size:0.9rem; color:#9E6020; line-height:1.5; }
+    .problem{background:var(--white)}
+    .problems-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px}
+    .problem-card{background:#FFF8F0;border:1px solid #FFE0B2;border-radius:var(--radius);padding:28px 24px}
+    .problem-card .icon{font-size:2rem;margin-bottom:14px}
+    .problem-card h3{font-size:1rem;font-weight:600;color:#7C3A00;margin-bottom:8px}
+    .problem-card p{font-size:.9rem;color:#9E6020;line-height:1.5}
 
     /* FEATURES */
-    .features { background:var(--bg); }
-    .features-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:24px; }
-    .feature-card { background:var(--white); border:1px solid var(--border); border-radius:var(--radius-lg); padding:32px 28px; transition:box-shadow .2s,transform .2s; }
-    .feature-card:hover { box-shadow:var(--shadow-lg); transform:translateY(-4px); }
-    .feature-icon { width:52px; height:52px; background:var(--green-pale); border-radius:14px; display:flex; align-items:center; justify-content:center; font-size:1.5rem; margin-bottom:20px; }
-    .feature-card h3 { font-size:1.1rem; font-weight:600; color:var(--dark); margin-bottom:10px; }
-    .feature-card p { font-size:0.9rem; color:var(--muted); line-height:1.6; }
-    .feature-tag { display:inline-block; margin-top:14px; background:var(--green-pale); color:var(--green-mid); font-size:0.75rem; font-weight:600; padding:3px 10px; border-radius:100px; }
-    .feature-tag.soon { background:#FFF8E1; color:#B8860B; }
+    .features{background:var(--bg)}
+    .features-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px}
+    .feature-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius-lg);padding:32px 28px;transition:box-shadow .2s,transform .2s}
+    .feature-card:hover{box-shadow:var(--shadow-lg);transform:translateY(-4px)}
+    .feature-icon{width:52px;height:52px;background:var(--green-pale);border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin-bottom:20px}
+    .feature-card h3{font-size:1.1rem;font-weight:600;color:var(--dark);margin-bottom:10px}
+    .feature-card p{font-size:.9rem;color:var(--muted);line-height:1.6}
+    .feature-tag{display:inline-block;margin-top:14px;background:var(--green-pale);color:var(--green-mid);font-size:.75rem;font-weight:600;padding:3px 10px;border-radius:100px}
+    .feature-tag.soon{background:#FFF8E1;color:#B8860B}
 
     /* VALEURS */
-    .values { background:linear-gradient(135deg,var(--green) 0%,var(--dark) 100%); color:var(--white); }
-    .values h2 { color:var(--white); }
-    .values .section-sub { color:rgba(255,255,255,0.65); }
-    .values-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:24px; margin-top:52px; }
-    .value-card { background:rgba(255,255,255,0.07); border:1px solid rgba(255,255,255,0.12); border-radius:var(--radius); padding:28px 24px; }
-    .value-card .icon { font-size:2rem; margin-bottom:14px; }
-    .value-card h3 { font-size:1rem; font-weight:600; color:var(--gold-light); margin-bottom:8px; }
-    .value-card p { font-size:0.88rem; color:rgba(255,255,255,0.6); line-height:1.55; }
+    .values{background:linear-gradient(135deg,var(--green) 0%,var(--dark) 100%);color:var(--white)}
+    .values h2{color:var(--white)}
+    .values .section-sub{color:rgba(255,255,255,.65)}
+    .values-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px;margin-top:52px}
+    .value-card{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:var(--radius);padding:28px 24px}
+    .value-card .icon{font-size:2rem;margin-bottom:14px}
+    .value-card h3{font-size:1rem;font-weight:600;color:var(--gold-light);margin-bottom:8px}
+    .value-card p{font-size:.88rem;color:rgba(255,255,255,.6);line-height:1.55}
 
-    /* ROADMAP */
-    .roadmap { background:var(--white); }
-    .roadmap-list { display:flex; flex-direction:column; max-width:680px; }
-    .roadmap-item { display:flex; gap:24px; align-items:flex-start; padding:24px 0; border-bottom:1px solid var(--border); }
-    .roadmap-item:last-child { border-bottom:none; }
-    .roadmap-dot { width:40px; height:40px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:1.1rem; flex-shrink:0; margin-top:2px; }
-    .roadmap-dot.done { background:var(--green-pale); }
-    .roadmap-dot.soon { background:#FFF8E1; }
-    .roadmap-dot.future { background:#F0F0F0; }
-    .roadmap-content h3 { font-size:1rem; font-weight:600; color:var(--dark); margin-bottom:4px; }
-    .roadmap-content p { font-size:0.88rem; color:var(--muted); }
-    .roadmap-badge { display:inline-block; margin-top:6px; font-size:0.72rem; font-weight:600; padding:2px 10px; border-radius:100px; }
-    .roadmap-badge.done { background:var(--green-pale); color:var(--green-mid); }
-    .roadmap-badge.soon { background:#FFF8E1; color:#B8860B; }
-    .roadmap-badge.future { background:#F0F0F0; color:#888; }
+    /* ROADMAP — timeline centrée */
+    .roadmap{background:var(--white)}
+    .roadmap-timeline{max-width:820px;margin:0 auto;position:relative;padding:8px 0}
+    .roadmap-timeline::before{content:'';position:absolute;left:50%;top:0;bottom:0;width:2px;background:var(--border);transform:translateX(-50%)}
+    .rt-item{display:grid;grid-template-columns:1fr 60px 1fr;align-items:start;margin-bottom:32px}
+    .rt-item:last-child{margin-bottom:0}
+    .rt-side{padding:0 24px}
+    .rt-side.left{text-align:right}
+    .rt-side.right{text-align:left}
+    .rt-card{display:inline-block;max-width:320px;background:var(--bg);border:1px solid var(--border);border-radius:var(--radius-lg);padding:20px 20px;box-shadow:var(--shadow);text-align:left}
+    .rt-card h3{font-size:.97rem;font-weight:600;color:var(--dark);margin-bottom:6px}
+    .rt-card p{font-size:.86rem;color:var(--muted);line-height:1.55}
+    .rt-badge{display:inline-block;margin-top:10px;font-size:.72rem;font-weight:600;padding:2px 10px;border-radius:100px}
+    .rt-badge.done{background:var(--green-pale);color:var(--green-mid)}
+    .rt-badge.soon{background:#FFF8E1;color:#B8860B}
+    .rt-badge.future{background:#F0F0F0;color:#888}
+    .rt-node{width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.2rem;position:relative;z-index:2;margin:0 auto;border:3px solid var(--white)}
+    .rt-node.done{background:var(--green-pale)}
+    .rt-node.soon{background:#FFF8E1}
+    .rt-node.future{background:#F0F0F0}
+    .rt-empty{/* cellule vide, côté opposé */}
 
-    /* ═══ TRANSPARENCE FINANCIÈRE ═══ */
-    .finance { background:var(--bg); }
-    .finance-center { display:flex; flex-direction:column; align-items:center; }
+    /* TRANSPARENCE FINANCIÈRE */
+    .finance{background:var(--bg)}
+    .finance-center{display:flex;flex-direction:column;align-items:center}
 
-    .finance-intro {
-      width:100%; max-width:760px;
-      background:var(--white); border:1px solid var(--border); border-radius:var(--radius-lg);
-      padding:36px 44px; margin-bottom:48px; border-left:5px solid var(--gold);
+    .finance-intro{
+      width:100%;max-width:760px;
+      background:var(--white);border:1px solid var(--border);border-radius:var(--radius-lg);
+      padding:36px 44px;margin-bottom:32px;border-left:5px solid var(--gold);
     }
-    .finance-intro p { color:var(--muted); line-height:1.8; font-size:0.97rem; margin-bottom:10px; }
-    .finance-intro p:last-child { margin-bottom:0; }
-    .finance-intro strong { color:var(--text); }
+    .finance-intro p{color:var(--muted);line-height:1.8;font-size:.97rem;margin-bottom:10px}
+    .finance-intro p:last-child{margin-bottom:0}
+    .finance-intro strong{color:var(--text)}
 
-    /* BLOCS COÛTS avec accordion */
-    .cost-blocks { width:100%; max-width:900px; display:flex; flex-direction:column; gap:12px; margin-bottom:52px; }
-    .cost-block {
-      background:var(--white); border:1px solid var(--border); border-radius:var(--radius);
-      overflow:hidden;
-    }
-    .cost-block.future { border-style:dashed; }
-    .cost-block-header {
-      display:flex; align-items:center; justify-content:space-between;
-      padding:20px 24px; cursor:pointer; user-select:none;
-      transition:background .15s;
-    }
-    .cost-block-header:hover { background:var(--bg); }
-    .cost-block-left { display:flex; align-items:center; gap:14px; }
-    .cost-block-icon { font-size:1.5rem; }
-    .cost-block-title { font-size:0.98rem; font-weight:600; color:var(--dark); }
-    .cost-block-sub { font-size:0.8rem; color:var(--muted); margin-top:2px; }
-    .cost-block-right { display:flex; align-items:center; gap:16px; }
-    .cost-amount { font-size:1.2rem; font-weight:700; color:var(--green); white-space:nowrap; }
-    .cost-amount.future { color:var(--muted); }
-    .cost-badge { font-size:0.72rem; font-weight:600; padding:3px 10px; border-radius:100px; white-space:nowrap; }
-    .cost-badge.now { background:var(--green-pale); color:var(--green-mid); }
-    .cost-badge.later { background:#FFF8E1; color:#B8860B; }
-    .cost-chevron { font-size:0.8rem; color:var(--muted); transition:transform .25s; flex-shrink:0; }
-    .cost-block.open .cost-chevron { transform:rotate(180deg); }
-    .cost-block-body {
-      max-height:0; overflow:hidden;
-      transition:max-height .3s ease, padding .3s ease;
-      padding:0 24px; background:var(--bg);
-    }
-    .cost-block.open .cost-block-body { max-height:400px; padding:20px 24px; }
-    .cost-block-body p { font-size:0.88rem; color:var(--muted); line-height:1.7; margin-bottom:8px; }
-    .cost-block-body p:last-child { margin-bottom:0; }
-    .cost-block-body strong { color:var(--text); }
-    .cost-block-body ul { margin:8px 0 8px 18px; }
-    .cost-block-body ul li { font-size:0.85rem; color:var(--muted); line-height:1.6; }
+    /* COMPTEUR FRAIS / DONS */
+    .finance-counter{width:100%;max-width:760px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-bottom:44px}
+    .counter-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius-lg);padding:24px 20px;text-align:center;box-shadow:var(--shadow)}
+    .counter-card .c-icon{font-size:1.6rem;margin-bottom:10px}
+    .counter-card .c-label{font-size:.82rem;color:var(--muted);font-weight:500;margin-bottom:8px}
+    .counter-card .c-value{font-size:1.5rem;font-weight:700;color:var(--green);line-height:1}
+    .counter-card .c-sub{font-size:.76rem;color:var(--muted);margin-top:6px;line-height:1.4}
+    .counter-card.alert .c-value{color:#B8860B}
 
     /* PALIERS */
-    .paliers-title { font-size:1.5rem; font-weight:700; color:var(--dark); margin-bottom:10px; text-align:center; }
-    .paliers-sub { font-size:0.97rem; color:var(--muted); text-align:center; max-width:560px; margin-bottom:36px; }
-    .paliers-grid { width:100%; max-width:900px; display:grid; grid-template-columns:repeat(auto-fit,minmax(190px,1fr)); gap:16px; margin-bottom:40px; }
-    .palier-card { border:2px solid var(--border); border-radius:var(--radius); padding:24px 20px; text-align:center; background:var(--white); transition:border-color .2s,box-shadow .2s; }
-    .palier-card:hover { border-color:var(--green); box-shadow:var(--shadow); }
-    .palier-emoji { font-size:2rem; margin-bottom:10px; }
-    .palier-card h3 { font-size:0.93rem; font-weight:600; color:var(--dark); margin-bottom:6px; }
-    .palier-amount { font-size:1.6rem; font-weight:700; color:var(--green); line-height:1; margin-bottom:8px; }
-    .palier-card p { font-size:0.8rem; color:var(--muted); line-height:1.5; }
-    .palier-card.featured { border-color:var(--gold); background:#FFFDF5; }
-    .palier-card.featured .palier-amount { color:var(--gold); }
+    .paliers-title{font-size:1.45rem;font-weight:700;color:var(--dark);margin-bottom:10px;text-align:center}
+    .paliers-sub{font-size:.95rem;color:var(--muted);text-align:center;max-width:580px;margin-bottom:28px}
+    .paliers-grid{width:100%;max-width:900px;display:grid;grid-template-columns:repeat(auto-fit,minmax(195px,1fr));gap:16px;margin-bottom:36px}
+    .palier-card{border:2px solid var(--border);border-radius:var(--radius);padding:24px 20px;text-align:center;background:var(--white);transition:border-color .2s,box-shadow .2s}
+    .palier-card:hover{border-color:var(--green);box-shadow:var(--shadow)}
+    .palier-emoji{font-size:2rem;margin-bottom:10px}
+    .palier-card h3{font-size:.93rem;font-weight:600;color:var(--dark);margin-bottom:6px}
+    .palier-amount{font-size:1.55rem;font-weight:700;color:var(--green);line-height:1;margin-bottom:8px}
+    .palier-card p{font-size:.8rem;color:var(--muted);line-height:1.5}
+    .palier-card.featured{border-color:var(--gold);background:#FFFDF5}
+    .palier-card.featured .palier-amount{color:var(--gold)}
 
-    /* CTA soutien */
-    .finance-cta { width:100%; max-width:640px; background:var(--white); border:1px solid var(--border); border-radius:var(--radius-lg); padding:40px 44px; text-align:center; box-shadow:var(--shadow); }
-    .waqf-arabic { font-family:'Amiri',serif; font-size:2rem; color:var(--gold); margin-bottom:8px; }
-    .finance-cta h3 { font-size:1.2rem; font-weight:700; color:var(--dark); margin-bottom:12px; }
-    .finance-cta p { color:var(--muted); font-size:0.93rem; margin-bottom:24px; max-width:440px; margin-left:auto; margin-right:auto; }
+    /* GRAND ACCORDION */
+    .master-accordion{width:100%;max-width:900px;margin-bottom:36px}
+    .master-toggle{
+      width:100%;background:var(--white);border:1.5px solid var(--border);
+      border-radius:var(--radius-lg);padding:18px 24px;
+      display:flex;align-items:center;justify-content:space-between;
+      cursor:pointer;box-shadow:var(--shadow);font-size:1rem;font-weight:600;
+      color:var(--dark);transition:background .15s;
+    }
+    .master-toggle:hover{background:var(--bg)}
+    .master-toggle .chev{font-size:.8rem;color:var(--muted);transition:transform .25s}
+    .master-accordion.open .master-toggle .chev{transform:rotate(180deg)}
+    .master-content{max-height:0;overflow:hidden;transition:max-height .4s ease,padding .3s ease;padding:0}
+    .master-accordion.open .master-content{max-height:3600px;padding-top:16px}
+
+    /* SOUS-BLOCS */
+    .cost-blocks{display:flex;flex-direction:column;gap:10px}
+    .cost-block{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden}
+    .cost-block.future{border-style:dashed;opacity:.88}
+    .cost-block-header{display:flex;align-items:center;justify-content:space-between;padding:18px 22px;cursor:pointer;user-select:none;transition:background .15s}
+    .cost-block-header:hover{background:var(--bg)}
+    .cost-block-left{display:flex;align-items:center;gap:14px}
+    .cost-block-icon{font-size:1.4rem}
+    .cost-block-title{font-size:.96rem;font-weight:600;color:var(--dark)}
+    .cost-block-sub{font-size:.78rem;color:var(--muted);margin-top:2px}
+    .cost-block-right{display:flex;align-items:center;gap:14px;flex-shrink:0}
+    .cost-amount{font-size:1.05rem;font-weight:700;color:var(--green);white-space:nowrap}
+    .cost-amount.future{color:var(--muted)}
+    .cost-badge{font-size:.7rem;font-weight:600;padding:3px 10px;border-radius:100px;white-space:nowrap}
+    .cost-badge.now{background:var(--green-pale);color:var(--green-mid)}
+    .cost-badge.later{background:#FFF8E1;color:#B8860B}
+    .cost-chevron{font-size:.75rem;color:var(--muted);transition:transform .25s}
+    .cost-block.open .cost-chevron{transform:rotate(180deg)}
+    .cost-block-body{max-height:0;overflow:hidden;transition:max-height .3s ease,padding .3s ease;padding:0 22px;background:var(--bg)}
+    .cost-block.open .cost-block-body{max-height:480px;padding:18px 22px}
+    .cost-block-body p{font-size:.87rem;color:var(--muted);line-height:1.7;margin-bottom:8px}
+    .cost-block-body p:last-child{margin-bottom:0}
+    .cost-block-body strong{color:var(--text)}
+    .cost-block-body ul{margin:8px 0 8px 18px}
+    .cost-block-body li{font-size:.84rem;color:var(--muted);line-height:1.6}
+
+    /* CTA FINANCE */
+    .finance-cta{width:100%;max-width:640px;background:var(--white);border:1px solid var(--border);border-radius:var(--radius-lg);padding:40px 44px;text-align:center;box-shadow:var(--shadow)}
+    .waqf-arabic{font-family:'Amiri',serif;font-size:2rem;color:var(--gold);margin-bottom:8px}
+    .finance-cta h3{font-size:1.2rem;font-weight:700;color:var(--dark);margin-bottom:12px}
+    .finance-cta p{color:var(--muted);font-size:.93rem;margin-bottom:24px;max-width:440px;margin-left:auto;margin-right:auto}
 
     /* CONTACT */
-    .contact { background:var(--white); }
-    .contact-grid { display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:start; }
-    .contact-form { display:flex; flex-direction:column; gap:16px; }
-    .form-group { display:flex; flex-direction:column; gap:6px; }
-    .form-group label { font-size:0.88rem; font-weight:500; color:var(--text); }
-    .form-group input,.form-group textarea,.form-group select { padding:12px 16px; border:1px solid var(--border); border-radius:8px; font-size:0.95rem; font-family:'Inter',sans-serif; color:var(--text); background:var(--bg); transition:border-color .2s; outline:none; }
-    .form-group input:focus,.form-group textarea:focus,.form-group select:focus { border-color:var(--green-light); }
-    .form-group textarea { resize:vertical; min-height:100px; }
-    .contact-info { padding-top:8px; }
-    .contact-info h3 { font-size:1.2rem; font-weight:600; margin-bottom:16px; }
-    .contact-info p { color:var(--muted); margin-bottom:28px; font-size:0.95rem; line-height:1.7; }
-    .contact-detail { display:flex; align-items:center; gap:12px; margin-bottom:14px; color:var(--muted); font-size:0.9rem; }
-    .contact-detail .icon { font-size:1.2rem; }
+    .contact{background:var(--white)}
+    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
+    .contact-form{display:flex;flex-direction:column;gap:16px}
+    .form-group{display:flex;flex-direction:column;gap:6px}
+    .form-group label{font-size:.88rem;font-weight:500;color:var(--text)}
+    .form-group input,.form-group textarea,.form-group select{padding:12px 16px;border:1px solid var(--border);border-radius:8px;font-size:.95rem;font-family:'Inter',sans-serif;color:var(--text);background:var(--bg);transition:border-color .2s;outline:none}
+    .form-group input:focus,.form-group textarea:focus,.form-group select:focus{border-color:var(--green-light)}
+    .form-group textarea{resize:vertical;min-height:100px}
+    .contact-info{padding-top:8px}
+    .contact-info h3{font-size:1.2rem;font-weight:600;margin-bottom:16px}
+    .contact-info p{color:var(--muted);margin-bottom:28px;font-size:.95rem;line-height:1.7}
+    .contact-detail{display:flex;align-items:center;gap:12px;margin-bottom:14px;color:var(--muted);font-size:.9rem}
+    .contact-detail .icon{font-size:1.2rem}
 
     /* FOOTER */
-    footer { background:var(--dark); color:rgba(255,255,255,0.5); padding:40px 5%; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:16px; }
-    .footer-logo { font-size:1.2rem; font-weight:700; color:var(--white); }
-    .footer-logo span { font-family:'Amiri',serif; color:var(--gold); margin-right:6px; }
-    footer p { font-size:0.82rem; }
-    .footer-links { display:flex; gap:20px; }
-    .footer-links a { color:rgba(255,255,255,0.45); font-size:0.82rem; text-decoration:none; transition:color .2s; }
-    .footer-links a:hover { color:var(--white); }
+    footer{background:var(--dark);color:rgba(255,255,255,.5);padding:40px 5%;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px}
+    .footer-logo{font-size:1.2rem;font-weight:700;color:var(--white)}
+    .footer-logo span{font-family:'Amiri',serif;color:var(--gold);margin-right:6px}
+    footer p{font-size:.82rem}
+    .footer-links{display:flex;gap:20px}
+    .footer-links a{color:rgba(255,255,255,.45);font-size:.82rem;text-decoration:none;transition:color .2s}
+    .footer-links a:hover{color:var(--white)}
 
-    @media(max-width:768px) {
-      nav { padding:0 4%; } .nav-links { display:none; }
-      section { padding:72px 4%; }
-      .contact-grid { grid-template-columns:1fr; gap:40px; }
-      .finance-intro,.finance-cta { padding:28px 20px; }
-      .cost-block-header { padding:16px 18px; }
-      .cost-block.open .cost-block-body { padding:16px 18px; }
-      footer { flex-direction:column; text-align:center; }
-      .footer-links { justify-content:center; }
+    /* RESPONSIVE */
+    @media(max-width:860px){
+      .roadmap-timeline::before{left:30px;transform:none}
+      .rt-item{grid-template-columns:60px 1fr}
+      .rt-node{grid-column:1;grid-row:1;align-self:start}
+      .rt-side.left{grid-column:2;grid-row:1;text-align:left;padding-left:18px;padding-right:0}
+      .rt-side.right{grid-column:2;grid-row:1;text-align:left;padding-left:18px;padding-right:0}
+      .rt-empty{display:none}
+      .rt-item.rev .rt-side.left{display:none}
+      .rt-item.rev .rt-side.right{display:block}
+    }
+    @media(max-width:768px){
+      nav{padding:0 4%} .nav-links{display:none}
+      section{padding:72px 4%}
+      .finance-counter{grid-template-columns:1fr}
+      .contact-grid{grid-template-columns:1fr;gap:40px}
+      .finance-intro,.finance-cta{padding:28px 20px}
+      .master-toggle{padding:14px 18px;font-size:.94rem}
+      .cost-block-header{padding:14px 16px;align-items:flex-start}
+      .cost-block-right{flex-wrap:wrap;justify-content:flex-end;gap:8px}
+      footer{flex-direction:column;text-align:center}
+      .footer-links{justify-content:center}
     }
   </style>
 </head>
@@ -229,8 +262,8 @@
   </div>
   <div class="hero-stats">
     <div class="stat"><div class="stat-num">100%</div><div class="stat-label">Données souveraines</div></div>
-    <div class="stat"><div class="stat-num">0€</div><div class="stat-label">Coût mensuel de départ</div></div>
-    <div class="stat"><div class="stat-num">5</div><div class="stat-label">Modules intégrés</div></div>
+    <div class="stat"><div class="stat-num">0€</div><div class="stat-label">Abonnement logiciel</div></div>
+    <div class="stat"><div class="stat-num">5+</div><div class="stat-label">Modules intégrés</div></div>
     <div class="stat"><div class="stat-num">FR</div><div class="stat-label">Pensé pour la France</div></div>
   </div>
 </section>
@@ -265,14 +298,14 @@
     <div class="feature-card"><div class="feature-icon">🧾</div><h3>Reçus fiscaux PDF</h3><p>Générés en un clic, conformes loi 1901/1905. Par transaction ou récapitulatif annuel avec votre logo.</p><span class="feature-tag">✅ Disponible</span></div>
     <div class="feature-card"><div class="feature-icon">🔔</div><h3>Notifications email</h3><p>Rappels groupés aux familles avec impayés ou aux adhérents en retard, directement depuis l'outil.</p><span class="feature-tag">✅ Disponible</span></div>
     <div class="feature-card"><div class="feature-icon">👥</div><h3>Portail adhérents</h3><p>Chaque membre pourra consulter son compte, ses paiements et télécharger ses reçus sans passer par l'admin.</p><span class="feature-tag soon">🔜 Bientôt</span></div>
-    <div class="feature-card"><div class="feature-icon">📱</div><h3>Application mobile</h3><p>iOS et Android pour les fidèles : cotisations, dons, actualités, école — tout depuis leur poche.</p><span class="feature-tag soon">🔜 En développement</span></div>
+    <div class="feature-card"><div class="feature-icon">📱</div><h3>Application mobile</h3><p>iOS et Android pour les fidèles : cotisations, dons, actualités, école — tout depuis leur poche.</p><span class="feature-tag soon">🔜 En réflexion</span></div>
   </div>
 </section>
 
 <!-- VALEURS -->
 <section class="values">
   <div class="section-header">
-    <span class="section-tag" style="background:rgba(201,168,76,0.2);color:var(--gold-light);">Nos engagements</span>
+    <span class="section-tag" style="background:rgba(201,168,76,.2);color:var(--gold-light)">Nos engagements</span>
     <h2>Construit avec des valeurs</h2>
     <p class="section-sub">Nidham n'est pas juste un logiciel. C'est un projet communautaire avec des principes non négociables.</p>
   </div>
@@ -284,19 +317,75 @@
   </div>
 </section>
 
-<!-- ROADMAP -->
+<!-- ROADMAP — TIMELINE CENTRÉE -->
 <section class="roadmap" id="roadmap">
   <div class="section-header">
-    <span class="section-tag">Transparence</span>
+    <span class="section-tag">Feuille de route</span>
     <h2>Où en est le projet ?</h2>
-    <p class="section-sub">Nidham est développé de façon ouverte. Voici la feuille de route publique.</p>
+    <p class="section-sub">Nidham est développé de façon ouverte. Voici la progression réelle, étape par étape.</p>
   </div>
-  <div class="roadmap-list">
-    <div class="roadmap-item"><div class="roadmap-dot done">✅</div><div class="roadmap-content"><h3>Gestion admin complète</h3><p>École coranique, cotisations, trésorerie, KPI, reçus PDF, notifications, audit log.</p><span class="roadmap-badge done">Disponible — Mars 2026</span></div></div>
-    <div class="roadmap-item"><div class="roadmap-dot done">✅</div><div class="roadmap-content"><h3>Beta terrain — 1ère mosquée pilote</h3><p>Déploiement sur Raspberry Pi, test avec données réelles, retours utilisateurs.</p><span class="roadmap-badge done">En cours — Avril 2026</span></div></div>
-    <div class="roadmap-item"><div class="roadmap-dot soon">🔜</div><div class="roadmap-content"><h3>Backup Google Drive / cloud</h3><p>Sauvegarde automatique chiffrée vers le service cloud de votre choix.</p><span class="roadmap-badge soon">Avril 2026</span></div></div>
-    <div class="roadmap-item"><div class="roadmap-dot soon">🔜</div><div class="roadmap-content"><h3>Portail adhérents &amp; familles</h3><p>Espace personnel pour chaque membre : consulter son compte, ses reçus, ses paiements.</p><span class="roadmap-badge soon">2e semestre 2026</span></div></div>
-    <div class="roadmap-item"><div class="roadmap-dot future">📱</div><div class="roadmap-content"><h3>Application mobile iOS &amp; Android</h3><p>Pour les fidèles : cotisations, dons, actualités, école.</p><span class="roadmap-badge future">2027</span></div></div>
+  <div class="roadmap-timeline">
+
+    <div class="rt-item">
+      <div class="rt-side left">
+        <div class="rt-card">
+          <h3>Gestion admin complète</h3>
+          <p>École coranique, cotisations, trésorerie, KPI, reçus PDF, notifications, audit log.</p>
+          <span class="rt-badge done">Disponible — Mars 2026</span>
+        </div>
+      </div>
+      <div class="rt-node done">✅</div>
+      <div class="rt-side right rt-empty"></div>
+    </div>
+
+    <div class="rt-item rev">
+      <div class="rt-side left rt-empty"></div>
+      <div class="rt-node done">🕌</div>
+      <div class="rt-side right">
+        <div class="rt-card">
+          <h3>Beta terrain — 1ère mosquée pilote</h3>
+          <p>Déploiement sur Raspberry Pi, test avec données réelles, retours utilisateurs.</p>
+          <span class="rt-badge done">En cours — Avril 2026</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="rt-item">
+      <div class="rt-side left">
+        <div class="rt-card">
+          <h3>Backups &amp; stabilité</h3>
+          <p>Sauvegardes automatisées chiffrées, documentation de déploiement, robustesse pour de nouvelles mosquées.</p>
+          <span class="rt-badge soon">Prochaine étape</span>
+        </div>
+      </div>
+      <div class="rt-node soon">🔜</div>
+      <div class="rt-side right rt-empty"></div>
+    </div>
+
+    <div class="rt-item rev">
+      <div class="rt-side left rt-empty"></div>
+      <div class="rt-node soon">👥</div>
+      <div class="rt-side right">
+        <div class="rt-card">
+          <h3>Portail adhérents &amp; familles</h3>
+          <p>Espace personnel pour chaque membre : compte, reçus, paiements — sans solliciter l'admin.</p>
+          <span class="rt-badge soon">2ᵉ semestre 2026</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="rt-item">
+      <div class="rt-side left">
+        <div class="rt-card">
+          <h3>Application mobile iOS &amp; Android</h3>
+          <p>Si les besoins le confirment et que l'infrastructure le permet. Pas avant d'avoir une base solide.</p>
+          <span class="rt-badge future">2027 et au-delà</span>
+        </div>
+      </div>
+      <div class="rt-node future">📱</div>
+      <div class="rt-side right rt-empty"></div>
+    </div>
+
   </div>
 </section>
 
@@ -304,213 +393,176 @@
 <section class="finance" id="transparence">
   <div class="section-header">
     <span class="section-tag">Transparence financière</span>
-    <h2>Où va l'argent ?</h2>
-    <p class="section-sub">Un outil transparent se doit d'être transparent sur ses propres finances. Voici tout, sans rien cacher.</p>
+    <h2>Soutenir Nidham</h2>
+    <p class="section-sub">Le logiciel est et restera gratuit. Si vous souhaitez contribuer, voici comment — et plus bas, où va chaque euro.</p>
   </div>
 
   <div class="finance-center">
 
     <!-- INTRO -->
     <div class="finance-intro">
-      <p><strong>Aujourd'hui (phase beta), Nidham ne coûte rien aux mosquées.</strong> Le logiciel tourne sur un Raspberry Pi (35–80€, fourni ou acheté par la mosquée). Le développement est entièrement bénévole — conçu sur le temps libre, par conviction.</p>
-      <p>Si le projet grandit, des coûts réels apparaîtront : infrastructure, comptes développeurs, et potentiellement des compétences extérieures (designers, développeurs bénévoles ou freelances). Plutôt que de vous le découvrir plus tard, voici tout maintenant. <strong>Cliquez sur chaque ligne pour les détails.</strong></p>
+      <p><strong>Nidham est développé bénévolement.</strong> L'outil, le code, les mises à jour — rien de tout ça n'a vocation à être payant. Ce qui peut coûter de l'argent, c'est uniquement l'infrastructure : matériel, hébergement, comptes développeur, ou une prestation ponctuelle si le projet grandit.</p>
+      <p>Les soutiens reçus servent à couvrir ces coûts réels. Si les dons couvrent, parfait. Si une mosquée a besoin d'un hébergement géré et que ça coûte cher, on en discute ensemble — mais l'outil lui-même reste libre.</p>
     </div>
 
-    <!-- BLOCS COÛTS ACCORDION -->
-    <div class="cost-blocks">
-
-      <div class="cost-block" onclick="toggleBlock(this)">
-        <div class="cost-block-header">
-          <div class="cost-block-left">
-            <span class="cost-block-icon">🖥️</span>
-            <div>
-              <div class="cost-block-title">Matériel — Raspberry Pi par mosquée</div>
-              <div class="cost-block-sub">Coût unique, propriété de la mosquée</div>
-            </div>
-          </div>
-          <div class="cost-block-right">
-            <span class="cost-amount">35–80€</span>
-            <span class="cost-badge now">Phase beta</span>
-            <span class="cost-chevron">▼</span>
-          </div>
-        </div>
-        <div class="cost-block-body">
-          <p>Nidham tourne sur un <strong>Raspberry Pi 4 ou 5</strong> installé dans vos locaux. C'est un achat unique, la mosquée en est propriétaire. Aucun loyer mensuel, aucune dépendance à un serveur externe.</p>
-          <p>Pendant la <strong>phase beta</strong>, nous accompagnons gratuitement l'installation et la configuration. Si une mosquée ne peut pas assumer ce coût, nous cherchons des solutions — c'est justement à ça que peuvent servir les soutiens reçus.</p>
-          <ul>
-            <li>Raspberry Pi 4 (2GB) : ~35€</li>
-            <li>Raspberry Pi 5 (4GB, recommandé) : ~60–80€</li>
-            <li>Carte SD + alimentation : ~15€ (inclus dans certains kits)</li>
-          </ul>
-        </div>
+    <!-- COMPTEUR -->
+    <div class="finance-counter">
+      <div class="counter-card">
+        <div class="c-icon">💸</div>
+        <div class="c-label">Frais engagés à ce jour</div>
+        <div class="c-value">~24€</div>
+        <div class="c-sub">Domaine nidham.fr (3 ans)</div>
       </div>
-
-      <div class="cost-block" onclick="toggleBlock(this)">
-        <div class="cost-block-header">
-          <div class="cost-block-left">
-            <span class="cost-block-icon">⏱️</span>
-            <div>
-              <div class="cost-block-title">Temps de développement</div>
-              <div class="cost-block-sub">Actuellement 100% bénévole</div>
-            </div>
-          </div>
-          <div class="cost-block-right">
-            <span class="cost-amount">0€</span>
-            <span class="cost-badge now">Bénévole</span>
-            <span class="cost-chevron">▼</span>
-          </div>
-        </div>
-        <div class="cost-block-body">
-          <p>Nidham est développé <strong>sur le temps libre</strong>, par conviction que la communauté mérite un outil digne de ce nom. Chaque fonctionnalité, chaque bug corrigé, chaque déploiement — c'est du bénévolat.</p>
-          <p>Si le projet grossit, nous pourrions avoir besoin de <strong>compétences supplémentaires</strong> : un designer pour l'app mobile, un développeur pour le portail adhérents, un testeur, etc. Nous privilégierons d'abord les bénévoles de la communauté, puis des freelances si nécessaire.</p>
-          <p>Si nous faisons appel à des freelances, <strong>les montants seront publiés ici</strong>, avec ce qui a été fait et pourquoi.</p>
-        </div>
+      <div class="counter-card">
+        <div class="c-icon">🤲</div>
+        <div class="c-label">Soutiens reçus</div>
+        <div class="c-value">0€</div>
+        <div class="c-sub">Mis à jour publiquement</div>
       </div>
-
-      <div class="cost-block" onclick="toggleBlock(this)">
-        <div class="cost-block-header">
-          <div class="cost-block-left">
-            <span class="cost-block-icon">🌐</span>
-            <div>
-              <div class="cost-block-title">Infrastructure — Domaine &amp; emails</div>
-              <div class="cost-block-sub">Coût actuel du projet en ligne</div>
-            </div>
-          </div>
-          <div class="cost-block-right">
-            <span class="cost-amount">~8€/an</span>
-            <span class="cost-badge now">Actuel</span>
-            <span class="cost-chevron">▼</span>
-          </div>
-        </div>
-        <div class="cost-block-body">
-          <p>Le seul coût récurrent actuel est le <strong>nom de domaine nidham.fr</strong> (~8€/an). Les emails transactionnels passent par Brevo, gratuit jusqu'à 300 mails/jour — largement suffisant pour l'instant.</p>
-          <ul>
-            <li>nidham.fr : ~8€/an (OVH, engagement 3 ans)</li>
-            <li>nidham.app : ~15€/an (si pris pour l'international)</li>
-            <li>Emails Brevo : 0€/mois (plan gratuit)</li>
-          </ul>
-        </div>
+      <div class="counter-card alert">
+        <div class="c-icon">💬</div>
+        <div class="c-label">Ce que ça veut dire</div>
+        <div class="c-value" style="font-size:1rem;line-height:1.4">Chaque don aide à aller plus loin</div>
+        <div class="c-sub">Sans changer la gratuité du logiciel</div>
       </div>
-
-      <div class="cost-block future" onclick="toggleBlock(this)">
-        <div class="cost-block-header">
-          <div class="cost-block-left">
-            <span class="cost-block-icon">☁️</span>
-            <div>
-              <div class="cost-block-title">Serveur cloud — Portail adhérents (futur)</div>
-              <div class="cost-block-sub">Nécessaire pour accès hors mosquée</div>
-            </div>
-          </div>
-          <div class="cost-block-right">
-            <span class="cost-amount future">~20€/mois</span>
-            <span class="cost-badge later">Futur</span>
-            <span class="cost-chevron">▼</span>
-          </div>
-        </div>
-        <div class="cost-block-body">
-          <p>Aujourd'hui, Nidham fonctionne en <strong>mode local</strong> — accessible uniquement depuis le réseau de la mosquée ou via tunnel sécurisé. C'est voulu : vos données ne bougent pas.</p>
-          <p>Quand nous développerons le <strong>portail adhérents</strong> (accès depuis chez soi), nous aurons besoin d'un petit serveur cloud comme relais sécurisé. Les données resteraient chiffrées et la mosquée garderait le contrôle.</p>
-          <p><strong>Ce coût sera mutualisé</strong> entre toutes les mosquées utilisatrices — pas répercuté individuellement. C'est pour ça que les soutiens collectifs comptent.</p>
-        </div>
-      </div>
-
-      <div class="cost-block future" onclick="toggleBlock(this)">
-        <div class="cost-block-header">
-          <div class="cost-block-left">
-            <span class="cost-block-icon">📱</span>
-            <div>
-              <div class="cost-block-title">Application mobile — Comptes développeurs</div>
-              <div class="cost-block-sub">Pour publier sur App Store &amp; Google Play</div>
-            </div>
-          </div>
-          <div class="cost-block-right">
-            <span class="cost-amount future">~115€</span>
-            <span class="cost-badge later">Futur — 2027</span>
-            <span class="cost-chevron">▼</span>
-          </div>
-        </div>
-        <div class="cost-block-body">
-          <p>Pour publier une app sur les stores officiels, il faut payer des frais d'accès développeur :</p>
-          <ul>
-            <li><strong>Apple Developer Program</strong> : 99$/an (~95€) — obligatoire pour iOS</li>
-            <li><strong>Google Play Console</strong> : 25$ une seule fois (~24€) — pour Android</li>
-          </ul>
-          <p>Ce sont des coûts uniques ou annuels, pas récurrents. Ils seront engagés uniquement quand l'app sera prête et testée.</p>
-        </div>
-      </div>
-
-      <div class="cost-block future" onclick="toggleBlock(this)">
-        <div class="cost-block-header">
-          <div class="cost-block-left">
-            <span class="cost-block-icon">💼</span>
-            <div>
-              <div class="cost-block-title">Si Nidham devient SaaS — Modèle économique</div>
-              <div class="cost-block-sub">Comment le projet pourrait s'autofinancer</div>
-            </div>
-          </div>
-          <div class="cost-block-right">
-            <span class="cost-amount future">À définir</span>
-            <span class="cost-badge later">Réflexion</span>
-            <span class="cost-chevron">▼</span>
-          </div>
-        </div>
-        <div class="cost-block-body">
-          <p>À terme, si Nidham grossit et nécessite des ressources importantes, nous envisageons un <strong>modèle freemium éthique</strong> :</p>
-          <ul>
-            <li><strong>Gratuit à vie</strong> : version locale sur Raspberry Pi, toutes les fonctions de base</li>
-            <li><strong>Soutien libre</strong> : les mosquées qui peuvent contribuent ce qu'elles veulent</li>
-            <li><strong>Option cloud (payante)</strong> : si une mosquée veut un hébergement géré par Nidham, sans Pi — un abonnement mensuel modeste (~10–20€/mois)</li>
-            <li><strong>Fonctions premium</strong> : app mobile, portail adhérents avancé — uniquement pour financer leur développement</li>
-          </ul>
-          <p><strong>Ce qui ne changera jamais</strong> : la version locale restera gratuite. Personne ne sera forcé de payer pour accéder à l'essentiel.</p>
-        </div>
-      </div>
-
     </div>
-    <!-- FIN ACCORDION -->
 
     <!-- PALIERS -->
-    <p class="paliers-title">Soutenir le projet</p>
-    <p class="paliers-sub">Aucune obligation. Si le projet vous apporte de la valeur et que vous souhaitez contribuer, voici comment nous y pensons.</p>
+    <p class="paliers-title">Comment soutenir ?</p>
+    <p class="paliers-sub">Aucune obligation. Ces paliers donnent un repère pour celles et ceux qui veulent contribuer sans friction.</p>
     <div class="paliers-grid">
       <div class="palier-card">
         <div class="palier-emoji">☕</div>
         <h3>Coup de pouce</h3>
         <div class="palier-amount">5€</div>
-        <p>Un geste symbolique — couvre quelques semaines de domaine.</p>
+        <p>Couvre quelques semaines de frais de domaine.</p>
       </div>
       <div class="palier-card featured">
         <div class="palier-emoji">🌱</div>
         <h3>Soutien régulier</h3>
         <div class="palier-amount">10€</div>
-        <p>Contribution mensuelle idéale. Avec 10 mosquées, tous les frais futurs sont couverts.</p>
+        <p>Avec 10 mosquées à ce niveau, les frais d'infra futurs sont couverts.</p>
       </div>
       <div class="palier-card">
         <div class="palier-emoji">💪</div>
         <h3>Soutien fort</h3>
         <div class="palier-amount">25€</div>
-        <p>Aide à financer l'app mobile et le portail adhérents plus vite.</p>
+        <p>Accélère le développement des prochaines fonctionnalités.</p>
       </div>
       <div class="palier-card">
         <div class="palier-emoji">🤝</div>
         <h3>Partenaire</h3>
         <div class="palier-amount">Libre</div>
-        <p>Besoin spécifique ou envie de contribuer autrement ? On discute.</p>
+        <p>Une mosquée, une asso, ou envie d'une contribution différente ? On en parle.</p>
       </div>
     </div>
+
+    <!-- GRAND ACCORDEON : OÙ VA L'ARGENT ? -->
+    <div class="master-accordion" id="masterAcc">
+      <button class="master-toggle" type="button" onclick="toggleMaster()">
+        <span>🔍 Où va l'argent exactement ? Voir le détail complet</span>
+        <span class="chev">▼</span>
+      </button>
+      <div class="master-content">
+        <div class="cost-blocks">
+
+          <div class="cost-block" onclick="toggleBlock(this)">
+            <div class="cost-block-header">
+              <div class="cost-block-left"><span class="cost-block-icon">🖥️</span><div><div class="cost-block-title">Matériel — Raspberry Pi par mosquée</div><div class="cost-block-sub">Coût unique, propriété de la mosquée</div></div></div>
+              <div class="cost-block-right"><span class="cost-amount">35–80€</span><span class="cost-badge now">Beta</span><span class="cost-chevron">▼</span></div>
+            </div>
+            <div class="cost-block-body">
+              <p>Nidham peut tourner sur un <strong>Raspberry Pi 4 ou 5</strong> installé dans les locaux de la mosquée. C'est un achat unique — la mosquée en est propriétaire. Pas d'abonnement, pas de dépendance à un serveur externe.</p>
+              <p>Si une mosquée ne peut pas assumer ce coût de départ, les soutiens reçus peuvent servir à l'aider.</p>
+              <ul>
+                <li>Raspberry Pi 4 (2 GB) : ~35€</li>
+                <li>Raspberry Pi 5 (4 GB, recommandé) : ~60–80€</li>
+                <li>Carte SD + alimentation : ~15€</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="cost-block" onclick="toggleBlock(this)">
+            <div class="cost-block-header">
+              <div class="cost-block-left"><span class="cost-block-icon">⏱️</span><div><div class="cost-block-title">Temps de développement</div><div class="cost-block-sub">Aujourd'hui 100% bénévole</div></div></div>
+              <div class="cost-block-right"><span class="cost-amount">0€</span><span class="cost-badge now">Bénévole</span><span class="cost-chevron">▼</span></div>
+            </div>
+            <div class="cost-block-body">
+              <p>Le développement, les corrections, les évolutions et les déploiements sont faits sur le <strong>temps libre</strong>, par conviction.</p>
+              <p>Si le projet grandit, un besoin ponctuel peut apparaître : design, mobile, sécurité, tests. Dans ce cas, on privilégie d'abord les bénévoles, puis des freelances si nécessaire.</p>
+              <p>Tout montant engagé pour une prestation sera publié ici, avec le détail de ce qui a été fait.</p>
+            </div>
+          </div>
+
+          <div class="cost-block" onclick="toggleBlock(this)">
+            <div class="cost-block-header">
+              <div class="cost-block-left"><span class="cost-block-icon">🌐</span><div><div class="cost-block-title">Infrastructure actuelle — domaine &amp; emails</div><div class="cost-block-sub">Seul coût récurrent à ce jour</div></div></div>
+              <div class="cost-block-right"><span class="cost-amount">~8€/an</span><span class="cost-badge now">Actuel</span><span class="cost-chevron">▼</span></div>
+            </div>
+            <div class="cost-block-body">
+              <p>Le seul coût récurrent est le nom de domaine <strong>nidham.fr</strong>. Les emails passent par Brevo (plan gratuit jusqu'à 300 mails/jour).</p>
+              <ul>
+                <li>nidham.fr : ~8€/an</li>
+                <li>nidham.app : ~15€/an (optionnel, si utile à terme)</li>
+                <li>Emails transactionnels : 0€/mois</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="cost-block future" onclick="toggleBlock(this)">
+            <div class="cost-block-header">
+              <div class="cost-block-left"><span class="cost-block-icon">☁️</span><div><div class="cost-block-title">Hébergement cloud — si les données y sont stockées</div><div class="cost-block-sub">Bien plus cher qu'un simple relais</div></div></div>
+              <div class="cost-block-right"><span class="cost-amount future">Variable</span><span class="cost-badge later">Futur</span><span class="cost-chevron">▼</span></div>
+            </div>
+            <div class="cost-block-body">
+              <p>Un relais léger coûte peu. Mais un vrai hébergement géré — avec stockage des données, sauvegardes, sécurité, haute disponibilité — peut coûter <strong>plusieurs dizaines d'euros par mosquée et par mois</strong> selon le volume.</p>
+              <p>Si une mosquée choisit cet hébergement géré (sans Raspberry Pi chez elle), elle contribue à son propre coût d'infra. Le logiciel reste gratuit ; c'est le service d'hébergement qui peut être payant.</p>
+              <p><strong>L'option locale sur Pi reste toujours disponible et gratuite.</strong></p>
+            </div>
+          </div>
+
+          <div class="cost-block future" onclick="toggleBlock(this)">
+            <div class="cost-block-header">
+              <div class="cost-block-left"><span class="cost-block-icon">📱</span><div><div class="cost-block-title">Application mobile — comptes développeur</div><div class="cost-block-sub">Pour publier sur App Store &amp; Google Play</div></div></div>
+              <div class="cost-block-right"><span class="cost-amount future">~115€</span><span class="cost-badge later">Futur</span><span class="cost-chevron">▼</span></div>
+            </div>
+            <div class="cost-block-body">
+              <p>Publier une app nécessite des comptes développeur payants :</p>
+              <ul>
+                <li><strong>Apple Developer Program</strong> : ~99$/an — obligatoire pour iOS</li>
+                <li><strong>Google Play Console</strong> : ~25$ une seule fois — pour Android</li>
+              </ul>
+              <p>Ces frais ne seront engagés que si l'app est réellement développée, testée et prête à sortir.</p>
+            </div>
+          </div>
+
+          <div class="cost-block future" onclick="toggleBlock(this)">
+            <div class="cost-block-header">
+              <div class="cost-block-left"><span class="cost-block-icon">📌</span><div><div class="cost-block-title">Principe économique du projet</div><div class="cost-block-sub">Ce qui est gratuit, ce qui peut coûter</div></div></div>
+              <div class="cost-block-right"><span class="cost-amount future">Principe</span><span class="cost-badge later">Important</span><span class="cost-chevron">▼</span></div>
+            </div>
+            <div class="cost-block-body">
+              <p><strong>Ce qui reste toujours gratuit :</strong> le code, l'outil, les mises à jour, les nouvelles fonctionnalités. Nidham n'est pas un SaaS commercial.</p>
+              <p><strong>Ce qui peut coûter de l'argent :</strong> l'infrastructure (matériel, serveurs, stockage), les comptes développeur pour une app mobile, et ponctuellement une compétence externe si nécessaire.</p>
+              <p>Si les dons couvrent ces coûts, ils sont gratuits pour tout le monde. Sinon, la mosquée qui utilise un service spécifique (hébergement géré, app) peut être amenée à contribuer à l'infra qu'elle consomme.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <!-- FIN GRAND ACCORDEON -->
 
     <!-- CTA -->
     <div class="finance-cta">
       <div class="waqf-arabic">نِظَام</div>
-      <h3>Une question ? Envie de contribuer ?</h3>
-      <p>Nidham publiera régulièrement un bilan ouvert : revenus, dépenses, et où va chaque euro. Écrivez-nous — pour soutenir, poser une question, ou simplement discuter du projet.</p>
-      <a href="mailto:contact@nidham.fr?subject=Soutenir Nidham" class="btn-primary">
-        🤲 Nous écrire
-      </a>
-      <p style="margin-top:12px;font-size:0.8rem;color:var(--muted);">Barak Allahu fik pour votre intérêt.</p>
+      <h3>Une question ou envie de contribuer ?</h3>
+      <p>Nidham publiera un suivi ouvert : frais engagés, soutiens reçus, et ce à quoi chaque euro a servi. Écrivez-nous pour soutenir, proposer de l'aide, ou simplement discuter du projet.</p>
+      <a href="mailto:contact@nidham.fr?subject=Soutenir Nidham" class="btn-primary">🤲 Nous écrire</a>
+      <p style="margin-top:12px;font-size:.8rem;color:var(--muted)">Barak Allahu fik pour votre intérêt.</p>
     </div>
 
-  </div><!-- fin finance-center -->
+  </div>
 </section>
 
 <!-- CONTACT -->
@@ -526,28 +578,19 @@
       <div class="form-group"><label>Votre nom *</label><input type="text" placeholder="Prénom Nom" required /></div>
       <div class="form-group"><label>Email *</label><input type="email" placeholder="contact@mosquee.fr" required /></div>
       <div class="form-group"><label>Ville</label><input type="text" placeholder="Lyon, Paris, Marseille..." /></div>
-      <div class="form-group">
-        <label>Taille approximative</label>
-        <select>
-          <option value="">-- Sélectionner --</option>
-          <option>Moins de 50 familles</option>
-          <option>50 à 150 familles</option>
-          <option>150 à 300 familles</option>
-          <option>Plus de 300 familles</option>
-        </select>
-      </div>
+      <div class="form-group"><label>Taille approximative</label><select><option value="">-- Sélectionner --</option><option>Moins de 50 familles</option><option>50 à 150 familles</option><option>150 à 300 familles</option><option>Plus de 300 familles</option></select></div>
       <div class="form-group"><label>Message (optionnel)</label><textarea placeholder="Parlez-nous de votre situation actuelle, vos besoins..."></textarea></div>
-      <button type="submit" class="btn-primary" style="width:100%;justify-content:center;">Envoyer ma demande 🕌</button>
+      <button type="submit" class="btn-primary" style="width:100%;justify-content:center">Envoyer ma demande 🕌</button>
     </form>
     <div class="contact-info">
       <h3>On vous répond sous 48h</h3>
       <p>Nidham est en phase beta avec notre première mosquée pilote. Nous intégrons progressivement de nouvelles associations pour garantir un accompagnement de qualité à chacune.</p>
       <div class="contact-detail"><span class="icon">📧</span><span>contact@nidham.fr</span></div>
       <div class="contact-detail"><span class="icon">📍</span><span>Région Auvergne-Rhône-Alpes, France</span></div>
-      <div class="contact-detail"><span class="icon">💻</span><a href="https://github.com/BadreddineEK/MManager" target="_blank" style="color:var(--muted);text-decoration:none;">Code open source sur GitHub</a></div>
-      <div style="margin-top:32px;padding:20px;background:var(--green-pale);border-radius:var(--radius);border-left:4px solid var(--green);">
-        <p style="color:var(--green);font-weight:600;font-size:0.9rem;margin-bottom:6px;">🎁 Phase beta gratuite</p>
-        <p style="color:var(--green-mid);font-size:0.85rem;margin:0;">Les mosquées pilotes bénéficient d'un accompagnement complet et d'un accès gratuit pendant toute la phase beta.</p>
+      <div class="contact-detail"><span class="icon">💻</span><a href="https://github.com/BadreddineEK/MManager" target="_blank" style="color:var(--muted);text-decoration:none">Code open source sur GitHub</a></div>
+      <div style="margin-top:32px;padding:20px;background:var(--green-pale);border-radius:var(--radius);border-left:4px solid var(--green)">
+        <p style="color:var(--green);font-weight:600;font-size:.9rem;margin-bottom:6px">🎁 Phase beta gratuite</p>
+        <p style="color:var(--green-mid);font-size:.85rem;margin:0">Les mosquées pilotes bénéficient d'un accompagnement complet et d'un accès gratuit pendant toute la phase beta.</p>
       </div>
     </div>
   </div>
@@ -565,30 +608,31 @@
 </footer>
 
 <script>
-  function toggleBlock(el) {
-    const wasOpen = el.classList.contains('open');
-    document.querySelectorAll('.cost-block.open').forEach(b => b.classList.remove('open'));
-    if (!wasOpen) el.classList.add('open');
+  function toggleMaster(){
+    document.getElementById('masterAcc').classList.toggle('open');
   }
-
-  function handleSubmit(e) {
+  function toggleBlock(el){
+    const wasOpen=el.classList.contains('open');
+    document.querySelectorAll('.cost-block.open').forEach(b=>b.classList.remove('open'));
+    if(!wasOpen)el.classList.add('open');
+  }
+  function handleSubmit(e){
     e.preventDefault();
-    const btn = e.target.querySelector('button[type="submit"]');
-    btn.textContent = '✅ Demande envoyée !';
-    btn.style.background = 'var(--green-mid)';
-    btn.disabled = true;
-    setTimeout(() => {
-      btn.textContent = 'Envoyer ma demande 🕌';
-      btn.style.background = ''; btn.disabled = false; e.target.reset();
-    }, 3000);
+    const btn=e.target.querySelector('button[type="submit"]');
+    btn.textContent='✅ Demande envoyée !';
+    btn.style.background='var(--green-mid)';
+    btn.disabled=true;
+    setTimeout(()=>{
+      btn.textContent='Envoyer ma demande 🕌';
+      btn.style.background='';btn.disabled=false;e.target.reset();
+    },3000);
   }
-
-  const sections = document.querySelectorAll('section[id]');
-  const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
-  window.addEventListener('scroll', () => {
-    let current = '';
-    sections.forEach(s => { if (window.scrollY >= s.offsetTop - 100) current = s.getAttribute('id'); });
-    navLinks.forEach(a => { a.style.color = a.getAttribute('href') === '#' + current ? 'var(--green)' : ''; });
+  const sections=document.querySelectorAll('section[id]');
+  const navLinks=document.querySelectorAll('.nav-links a[href^="#"]');
+  window.addEventListener('scroll',()=>{
+    let current='';
+    sections.forEach(s=>{if(window.scrollY>=s.offsetTop-100)current=s.getAttribute('id');});
+    navLinks.forEach(a=>{a.style.color=a.getAttribute('href')==='#'+current?'var(--green)':''});
   });
 </script>
 </body>
