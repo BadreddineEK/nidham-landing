@@ -16,6 +16,9 @@
   <meta name="twitter:title" content="Nidham — L'outil de gestion pour les mosquées françaises" />
   <meta name="twitter:description" content="Remplacez vos fichiers Excel par un outil professionnel souverain. École, cotisations, trésorerie — 0€ d'abonnement logiciel." />
   <link rel="canonical" href="https://nidham.fr/" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231B4332'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='serif' font-size='36' fill='%23C9A84C'%3E%D9%86%3C/text%3E%3C/svg%3E" />
+  <meta property="og:image" content="https://nidham.fr/og-image.svg" />
+  <meta name="twitter:image" content="https://nidham.fr/og-image.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Amiri:wght@400;700&display=swap" rel="stylesheet" />
@@ -369,9 +372,7 @@
   <a href="#" class="nav-logo"><span class="arabic">نِظَام</span> Nidham</a>
   <div class="nav-links">
     <a href="#fonctionnalites">Fonctionnalités</a>
-    <a href="#apercu">Aperçu</a>
     <a href="#mosquees">Mosquées</a>
-    <a href="#comment-ca-marche">Comment ça marche</a>
     <a href="#roadmap">Roadmap</a>
     <a href="#transparence">Transparence</a>
     <a href="#contact" class="nav-cta">Intégrer ma mosquée</a>
@@ -383,9 +384,7 @@
 <!-- Menu mobile -->
 <div class="nav-mobile" id="mobileMenu">
   <a href="#fonctionnalites" onclick="closeMenu()">Fonctionnalités</a>
-  <a href="#apercu" onclick="closeMenu()">Aperçu de l'outil</a>
   <a href="#mosquees" onclick="closeMenu()">Mosquées</a>
-  <a href="#comment-ca-marche" onclick="closeMenu()">Comment ça marche</a>
   <a href="#roadmap" onclick="closeMenu()">Roadmap</a>
   <a href="#transparence" onclick="closeMenu()">Transparence</a>
   <a href="#contact" onclick="closeMenu()">Intégrer ma mosquée &#128332;</a>
@@ -395,17 +394,17 @@
 <section class="hero">
   <div class="hero-badge"><span class="dot"></span>Beta terrain · Mosquée de Meximieux</div>
   <h1>La gestion de votre mosquée,<br /><span>enfin à sa place.</span></h1>
-  <p>École, cotisations, trésorerie, KPI — tout dans un seul outil pensé pour les associations islamiques françaises. Vos données restent chez vous. Pour toujours.</p>
+  <p>École, cotisations, trésorerie, tableaux de bord — tout dans un seul outil pensé pour les associations islamiques françaises. Vos données restent chez vous. Pour toujours.</p>
   <div class="hero-actions">
-    <a href="#contact" class="btn-primary">🕌 Intégrer ma mosquée</a>
+    <a href="#contact" class="btn-primary">&#128332; Intégrer ma mosquée</a>
     <a href="#fonctionnalites" class="btn-secondary">Voir les fonctionnalités</a>
   </div>
   <div class="hero-stats">
     <div class="stat"><div class="stat-num">0€</div><div class="stat-label">Abonnement logiciel</div></div>
-    <div class="stat"><div class="stat-num">100%</div><div class="stat-label">Données souveraines</div></div>
+    <div class="stat"><div class="stat-num">100%</div><div class="stat-label">Données chez vous</div></div>
     <div class="stat"><div class="stat-num">5</div><div class="stat-label">Modules intégrés</div></div>
     <div class="stat"><div class="stat-num">1</div><div class="stat-label">Mosquée pilote en beta</div></div>
-    <div class="stat"><div class="stat-num">1901</div><div class="stat-label">Conforme loi française</div></div>
+    <div class="stat"><div class="stat-num">Loi&nbsp;1901</div><div class="stat-label">Reçus fiscaux conformes</div></div>
   </div>
 </section>
 
@@ -440,12 +439,15 @@
     <div class="feature-card fade-in fade-in-delay-1"><div class="feature-icon">&#128222;</div><h3>Emails automatiques &amp; PDF</h3><p>Reçus fiscaux conformes loi 1901/1905 générés automatiquement en PDF. Envoi par email : individuel ou en masse à tous vos adhérents et familles en un seul clic. Aucun logiciel tiers nécessaire.</p><span class="feature-tag">&#10003; Disponible</span></div>
     <div class="feature-card fade-in fade-in-delay-2"><div class="feature-icon">&#128274;</div><h3>Rôles &amp; accès</h3><p>Trois profils (Responsable, Bureau école, Trésorier) avec des droits séparés. Chaque action est tracée — qui a fait quoi et quand.</p><span class="feature-tag">&#10003; Disponible</span></div>
     <div class="feature-card fade-in"><div class="feature-icon">👥</div><h3>Portail adhérents</h3><p>Chaque membre pourra consulter son compte, ses paiements et télécharger ses reçus sans solliciter l'administrateur.</p><span class="feature-tag soon">🔜 2e semestre 2026</span></div>
-    <div class="feature-card fade-in fade-in-delay-1"><div class="feature-icon">☁️</div><h3>Mode cloud BYOD</h3><p>La mosquée branche sa propre base Supabase (gratuit). Zéro donnée sur nos serveurs, accès depuis partout, toujours gratuit.</p><span class="feature-tag soon">🔜 En développement</span></div>
+    <div class="feature-card fade-in fade-in-delay-1"><div class="feature-icon">&#9925;</div><h3>Mode cloud BYOD</h3><p>La mosquée branche sa propre base Supabase (gratuit). Zéro donnée sur nos serveurs, accès depuis partout, toujours gratuit.</p><span class="feature-tag soon">&#128280; En développement</span></div>
+  </div>
+  <div style="text-align:center;margin-top:52px">
+    <a href="#contact" class="btn-primary" style="background:var(--green);color:var(--white)">&#128332; Intégrer ma mosquée — c'est gratuit</a>
   </div>
 </section>
 
-<!-- APERÇU DE L'OUTIL -->
-<section class="demo" id="apercu">
+<!-- APERÇU DE L'OUTIL — masqué jusqu'à avoir de vraies captures -->
+<section class="demo" id="apercu" style="display:none" aria-hidden="true">
   <div class="section-header">
     <span class="section-tag">Aperçu</span>
     <h2>À quoi ça ressemble concrètement ?</h2>
@@ -500,7 +502,7 @@
       <div class="mosque-name">Mosquée de Meximieux</div>
       <div class="mosque-city">&#128205; Meximieux (01) — Ain, Auvergne-Rhône-Alpes</div>
       <div class="mosque-detail">Première mosquée pilote. Déploiement sur Raspberry Pi local, utilisation réelle depuis avril 2026 — école, cotisations et trésorerie.</div>
-      <a href="#contact" class="mosque-kpi-link">&#128202; Voir les KPI publics <span style="font-size:.9rem">→</span></a>
+      <span class="demo-coming-badge" style="margin-top:12px">&#128202; Page KPI publique — à venir</span>
     </div>
     <div class="mosque-card placeholder fade-in fade-in-delay-1">
       <div style="font-size:2rem">&#128332;</div>
@@ -647,7 +649,7 @@
           <span class="rt-badge soon">🔜 Prochaine étape</span>
         </div>
       </div>
-      <div class="rt-node soon">�</div>
+      <div class="rt-node soon">&#128190;</div>
       <div class="rt-side right"></div>
     </div>
 
@@ -658,7 +660,7 @@
         <div class="rt-card">
           <h3>Mode BYOD cloud</h3>
           <p>La mosquée branche sa propre base Supabase. Zéro données chez nous, accès depuis n'importe où, toujours gratuit.</p>
-          <span class="rt-badge soon">� 2e semestre 2026</span>
+          <span class="rt-badge soon">&#128197; 2e semestre 2026</span>
         </div>
       </div>
     </div>
@@ -687,6 +689,9 @@
       </div>
     </div>
 
+  </div>
+  <div style="text-align:center;margin-top:52px">
+    <a href="#contact" class="btn-primary" style="background:var(--green);color:var(--white)">&#128332; Rejoindre la beta — accompagnement gratuit</a>
   </div>
 </section>
 
