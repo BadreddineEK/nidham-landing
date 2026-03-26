@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FAQ — Nidham, outil de gestion pour les mosquées</title>
+  <meta name="description" content="Questions fréquentes sur Nidham : gratuité, données, RGPD, compétences techniques requises, déploiement, différence Pi/cloud, arrêt du projet." />
+  <link rel="canonical" href="https://nidham.fr/faq.html" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231B4332'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='serif' font-size='36' fill='%23C9A84C'%3E%D9%86%3C/text%3E%3C/svg%3E" />
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://nidham.fr/faq.html" />
+  <meta property="og:title" content="FAQ — Nidham, outil de gestion pour les mosquées" />
+  <meta property="og:description" content="Toutes les réponses aux questions fréquentes sur Nidham." />
+  <meta property="og:image" content="https://nidham.fr/og-image.svg" />
+  <!-- JSON-LD FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type":"Question","name":"Nidham est-il vraiment gratuit ?","acceptedAnswer":{"@type":"Answer","text":"Oui. Le logiciel est gratuit et le restera. Seule l'infrastructure peut avoir un coût : matériel Pi (achat unique, propriété de la mosquée) ou compte Supabase si vous dépassez le free tier."}},
+      {"@type":"Question","name":"Qui voit nos données ?","acceptedAnswer":{"@type":"Answer","text":"Personne d'autre que vous. Avec le mode Pi local, les données ne quittent jamais vos locaux. Avec le mode BYOD Supabase, vous créez vous-même votre compte — Nidham n'y a pas accès."}},
+      {"@type":"Question","name":"Faut-il des compétences techniques ?","acceptedAnswer":{"@type":"Answer","text":"Non. L'installation est accompagnée. Le bureau de la mosquée utilise une interface web simple, sans ligne de code."}},
+      {"@type":"Question","name":"Que se passe-t-il si le projet s'arrête ?","acceptedAnswer":{"@type":"Answer","text":"Le code est open source sur GitHub. Vos données vous appartiennent et restent dans votre propre base. Vous pouvez exporter au format CSV à tout moment."}}
+    ]
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Amiri:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --green:#1B4332;--green-mid:#2D6A4F;--green-light:#40916C;--green-pale:#D8F3DC;--green-xpale:#EEF7F1;
+      --gold:#C9A84C;--gold-light:#F0D080;--gold-pale:#FFF8E1;
+      --dark:#0D1B12;--text:#1A2E1F;--muted:#5A7A63;
+      --bg:#F7FAF8;--white:#FFFFFF;--border:#D4E8DB;
+      --radius:12px;--radius-lg:20px;
+      --shadow:0 4px 24px rgba(27,67,50,.10);
+      --transition:.2s ease;
+    }
+    html{scroll-behavior:smooth}
+    body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
+
+    /* NAV */
+    nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 5%;height:68px;background:rgba(247,250,248,.95);backdrop-filter:blur(14px);border-bottom:1px solid var(--border)}
+    .nav-logo{display:flex;align-items:center;gap:10px;font-size:1.4rem;font-weight:700;color:var(--green);text-decoration:none}
+    .nav-logo span{font-family:'Amiri',serif;font-size:1.6rem;color:var(--gold)}
+    .nav-links{display:flex;align-items:center;gap:24px}
+    .nav-links a{color:var(--muted);text-decoration:none;font-size:.9rem;font-weight:500;transition:color .2s}
+    .nav-links a:hover{color:var(--green)}
+    .nav-cta{background:var(--green);color:var(--white)!important;padding:10px 22px;border-radius:8px;font-size:.88rem!important}
+    .nav-cta:hover{background:var(--green-mid)!important;transform:translateY(-1px)}
+    @media(max-width:720px){.nav-links{display:none}}
+
+    /* PAGE */
+    .page-wrapper{max-width:760px;margin:0 auto;padding:120px 24px 80px}
+    .page-hero{text-align:center;margin-bottom:56px}
+    .page-tag{display:inline-block;background:var(--green-pale);color:var(--green);font-size:.78rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:5px 14px;border-radius:20px;margin-bottom:18px}
+    .page-hero h1{font-size:clamp(1.8rem,4vw,2.6rem);font-weight:800;color:var(--dark);line-height:1.2;margin-bottom:16px}
+    .page-hero p{color:var(--muted);font-size:1.05rem;max-width:520px;margin:0 auto}
+
+    /* FAQ ITEMS */
+    .faq-category{margin-bottom:48px}
+    .faq-category-title{font-size:.8rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);border-bottom:2px solid var(--gold-pale);padding-bottom:8px;margin-bottom:20px}
+    .faq-item{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);margin-bottom:10px;overflow:hidden}
+    .faq-question{width:100%;text-align:left;background:none;border:none;padding:20px 24px;font-family:'Inter',sans-serif;font-size:.97rem;font-weight:600;color:var(--dark);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px;transition:background .15s}
+    .faq-question:hover{background:var(--green-xpale)}
+    .faq-question .chev{color:var(--green-light);font-size:.85rem;transition:transform .2s;flex-shrink:0}
+    .faq-item.open .faq-question .chev{transform:rotate(180deg)}
+    .faq-answer{display:none;padding:0 24px 20px;color:var(--muted);font-size:.93rem;line-height:1.75}
+    .faq-item.open .faq-answer{display:block}
+    .faq-answer p{margin-bottom:10px}
+    .faq-answer p:last-child{margin-bottom:0}
+    .faq-answer ul{margin:10px 0 10px 18px}
+    .faq-answer ul li{margin-bottom:6px}
+    .faq-answer strong{color:var(--text)}
+    .faq-answer a{color:var(--green-mid);font-weight:500}
+
+    /* CTA FOOTER */
+    .page-cta{background:var(--green);border-radius:var(--radius-lg);padding:44px;text-align:center;color:var(--white);margin-top:64px}
+    .page-cta h2{font-size:1.5rem;font-weight:700;margin-bottom:12px}
+    .page-cta p{opacity:.82;font-size:.95rem;margin-bottom:28px}
+    .btn-white{display:inline-flex;align-items:center;gap:8px;background:var(--white);color:var(--green);padding:13px 28px;border-radius:10px;font-weight:700;font-size:.95rem;text-decoration:none;transition:transform .15s,box-shadow .15s}
+    .btn-white:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,.15)}
+    .btn-white-outline{display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--white);border:2px solid rgba(255,255,255,.4);padding:13px 28px;border-radius:10px;font-weight:600;font-size:.95rem;text-decoration:none;transition:border-color .15s}
+    .btn-white-outline:hover{border-color:var(--white)}
+
+    /* FOOTER */
+    footer{background:var(--dark);color:rgba(255,255,255,.7);padding:40px 5% 24px}
+    .footer-inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;margin-bottom:20px}
+    .footer-brand-sm{font-family:'Amiri',serif;font-size:1.3rem;color:var(--gold)}
+    .footer-links-sm{display:flex;gap:20px;flex-wrap:wrap}
+    .footer-links-sm a{color:rgba(255,255,255,.55);text-decoration:none;font-size:.85rem;transition:color .2s}
+    .footer-links-sm a:hover{color:var(--white)}
+    .footer-copy{text-align:center;font-size:.78rem;opacity:.45;border-top:1px solid rgba(255,255,255,.08);padding-top:20px}
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo"><span>&#1606;&#1616;&#1592;&#1614;&#1575;&#1605;</span> Nidham</a>
+  <div class="nav-links">
+    <a href="/#fonctionnalites">Fonctionnalités</a>
+    <a href="/#mosquees">Mosquées</a>
+    <a href="/#roadmap">Roadmap</a>
+    <a href="/transparence.html">Transparence</a>
+    <a href="/#contact" class="nav-cta">Intégrer ma mosquée</a>
+  </div>
+</nav>
+
+<div class="page-wrapper">
+
+  <div class="page-hero">
+    <span class="page-tag">Questions fréquentes</span>
+    <h1>FAQ — Tout ce que vous<br />voulez savoir sur Nidham</h1>
+    <p>Les questions que les responsables de mosquées nous posent le plus souvent — avec des réponses honnêtes.</p>
+  </div>
+
+  <!-- CATÉGORIE 1 : Gratuité & modèle -->
+  <div class="faq-category">
+    <div class="faq-category-title">Gratuité &amp; modèle économique</div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        Nidham est-il vraiment gratuit ?
+        <span class="chev">&#9660;</span>
+      </button>
+      <div class="faq-answer">
+        <p><strong>Oui, le logiciel est gratuit et le restera.</strong> Nidham n'est pas un SaaS commercial. Il n'y a pas d'abonnement mensuel, pas de version "premium" cachée, pas de freemium.</p>
+        <p>Ce qui peut avoir un coût, c'est uniquement l'infrastructure que vous choisissez :</p>
+        <ul>
+          <li><strong>Mode Pi local :</strong> achat unique d'un Raspberry Pi (35–80€), propriété de la mosquée. Ensuite, 0€/mois pour toujours.</li>
+          <li><strong>Mode BYOD Supabase :</strong> compte gratuit jusqu'à 500 MB (suffisant pour 500–800 familles). Au-delà : 25$/mois, payé directement à Supabase.</li>
+        </ul>
+        <p>Nous ne sommes ni intermédiaires ni revendeurs. Vous payez Supabase ou le matériel — pas Nidham.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        Comment le projet est-il financé ?
+        <span class="chev">&#9660;</span>
+      </button>
+      <div class="faq-answer">
+        <p>Le développement est <strong>100% bénévole</strong>, réalisé sur le temps libre par conviction.</p>
+        <p>Les seuls frais réels sont l'infrastructure du projet lui-même : le domaine nidham.fr (18,70€ jusqu'en 2029) et l'hébergement du site (0€ sur GitHub Pages).</p>
+        <p>Des soutiens financiers sont acceptés pour couvrir ces coûts et éventuellement financer du matériel pour les mosquées qui n'ont pas les moyens. Tout est détaillé sur la <a href="/transparence.html">page Transparence</a>.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        Allez-vous rester gratuit si le projet grandit ?
+        <span class="chev">&#9660;</span>
+      </button>
+      <div class="faq-answer">
+        <p>C'est notre engagement. Nidham est pensé comme un <strong>waqf numérique</strong> — une contribution durable à la communauté, pas un produit à monétiser.</p>
+        <p>Si le projet grandit, on cherchera des bénévoles, des contributeurs open source, ou des partenariats institutionnels — pas un modèle par abonnement. Les mosquées ont des budgets serrés et méritent des outils sérieux sans friction financière.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- CATÉGORIE 2 : Données & vie privée -->
+  <div class="faq-category">
+    <div class="faq-category-title">Données &amp; vie privée</div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        Qui peut voir les données de notre mosquée ?
+        <span class="chev">&#9660;</span>
+      </button>
+      <div class="faq-answer">
+        <p><strong>Personne d'autre que vous.</strong> C'est le cœur du modèle BYOD (Bring Your Own Database).</p>
+        <ul>
+          <li><strong>Mode Pi local :</strong> les données sont stockées sur votre propre serveur dans vos locaux. Elles ne partent nulle part. Même si internet tombe en panne, votre outil continue de fonctionner.</li>
+          <li><strong>Mode BYOD Supabase :</strong> vous créez vous-même votre compte Supabase. Nidham se connecte à votre base avec vos propres identifiants — nous n'avons aucun accès, aucune visibilité, aucune copie.</li>
+        </ul>
+        <p>Nidham ne centralise pas de données. Il n'y a pas de "serveur Nidham" qui connaît vos adhérents.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        Êtes-vous conformes au RGPD ?
+        <span class="chev">&#9660;</span>
+      </button>
+      <div class="faq-answer">
+        <p>Le modèle BYOD est structurellement favorable au RGPD : les données restent chez vous, sous votre contrôle, sans tiers intermédiaire.</p>
+        <p>En tant qu'association, <strong>vous êtes le responsable de traitement</strong>. Nidham est un outil que vous utilisez — à vous de déclarer les traitements si nécessaire (fichier adhérents, trésorerie, etc.) selon vos obligations légales.</p>
+        <p>L'outil ne collecte aucune donnée à des fins commerciales, ne revend rien, et ne croise pas vos données avec d'autres.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        Peut-on exporter nos données ?
+        <span class="chev">&#9660;</span>
+      </button>
+      <div class="faq-answer">
+        <p><strong>Oui, toujours.</strong> Vos données vous appartiennent.</p>
+        <ul>
+          <li>Export CSV depuis l'interface pour les adhérents, les paiements, les entrées comptables.</li>
+          <li>Accès direct à votre base de données Supabase (PostgreSQL) ou fichiers SQLite sur le Pi — vous pouvez sauvegarder comme vous voulez.</li>
+        </ul>
+        <p>Pas de lock-in. Si vous décidez de partir ou de changer d'outil, vous emportez tout.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- CATÉGORIE 3 : Technique & déploiement -->
+  <div class="faq-category">
+    <div class="faq-category-title">Technique &amp; déploiement</div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        Faut-il des compétences techniques pour utiliser Nidham ?
+        <span class="chev">&#9660;</span>
+      </button>
+      <div class="faq-answer">
+        <p><strong>Non.</strong> L'interface quotidienne est une application web simple. Pas de ligne de code, pas de terminal, pas de configuration à faire.</p>
+        <p>L'installation initiale (Pi ou BYOD) est accompagnée par notre équipe. On s'occupe de tout : installation, configuration, formation du bureau sur les fonctions principales.</p>
+        <p>Une fois en place, l'outil fonctionne comme n'importe quelle appli web — depuis un téléphone, une tablette ou un PC.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        Quelle est la différence entre le mode Pi et le mode cloud (BYOD) ?
+        <span class="chev">&#9660;</span>
+      </button>
+      <div class="faq-answer">
+        <p>Les deux modes font tourner exactement le même logiciel. La différence est <strong>où sont stockées vos données</strong> :</p>
+        <ul>
+          <li><strong>&#x1F4BB; Pi local :</strong> un petit serveur dans vos locaux (Raspberry Pi, ~60€). Données chez vous, aucune dépendance internet pour l'usage quotidien, accès en réseau local. Idéal pour les mosquées avec une salle informatique ou un local sécurisé.</li>
+          <li><strong>&#x2601;&#xFE0F; BYOD Supabase :</strong> votre base de données est dans le cloud, sur votre compte Supabase gratuit. Accessible de partout avec internet. Aucun matériel à acheter ni à maintenir. Idéal pour les petites associations sans local dédié.</li>
+          <li><strong>&#x1F503; Hybride :</strong> Pi pour le stockage principal + sauvegarde automatique sur Supabase. Le meilleur des deux mondes.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        Peut-on migrer d'un mode à l'autre plus tard ?
+        <span class="chev">&#9660;</span>
+      </button>
+      <div class="faq-answer">
+        <p>Oui. Les données sont exportables et importables entre les deux modes. Si vous commencez en BYOD et souhaitez passer en Pi (ou inversement), on peut faire la migration avec vous.</p>
+        <p>Il n'y a pas de pénalité, pas de frais de migration. C'est votre projet, votre infrastructure.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        Fonctionne-t-il sur téléphone / tablette ?
+        <span class="chev">&#9660;</span>
+      </button>
+      <div class="faq-answer">
+        <p>L'interface web est responsive et utilisable sur mobile. Pour un usage quotidien confortable (saisie de cotisations, consultation de fiches), un smartphone suffit.</p>
+        <p>Une application mobile native (iOS &amp; Android) est prévue dans la roadmap — pour encore plus de fluidité et la possibilité de travailler hors ligne.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- CATÉGORIE 4 : Légal & institutionnel -->
+  <div class="faq-category">
+    <div class="faq-category-title">Cadre légal &amp; institutionnel</div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        Est-ce compatible avec le statut loi 1901 / loi 1905 ?
+        <span class="chev">&#9660;</span>
+      </button>
+      <div class="faq-answer">
+        <p>Oui. Nidham est conçu pour les associations françaises, qui fonctionnent majoritairement sous loi 1901 (association) ou loi 1905 (culte).</p>
+        <p>La gestion des cotisations, la trésorerie et les rapports sont pensés pour répondre aux obligations de ces statuts : assemblée générale annuelle, compte de résultat, suivi des adhérents.</p>
+        <p>L'outil ne génère pas de documents comptables certifiés (bilan officiel pour un commissaire aux comptes) — il est pensé comme outil de gestion interne, pas comme logiciel de comptabilité agréé.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        Que se passe-t-il si le projet Nidham s'arrête un jour ?
+        <span class="chev">&#9660;</span>
+      </button>
+      <div class="faq-answer">
+        <p>C'est une question légitime. Voici les garanties :</p>
+        <ul>
+          <li><strong>Le code est open source</strong> sur GitHub. Si le projet s'arrête, le code reste accessible — n'importe qui peut le reprendre, le forker, le faire évoluer.</li>
+          <li><strong>Vos données vous appartiennent</strong> — elles sont dans votre propre base (Pi ou Supabase). Vous pouvez les exporter à tout moment au format CSV, sans dépendre de nous.</li>
+          <li><strong>Aucune dépendance à un service Nidham :</strong> l'outil ne pointe pas vers nos serveurs pour fonctionner. Pas de clé d'activation, pas d'abonnement, pas de central.</li>
+        </ul>
+        <p>En résumé : si demain le projet s'arrête, votre installation continue de fonctionner indéfiniment, et vos données sont récupérables.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- CTA -->
+  <div class="page-cta">
+    <h2>Votre question n'est pas ici ?</h2>
+    <p>Écrivez-nous directement — on vous répond sous 48h. On ajoute régulièrement les nouvelles questions à cette FAQ.</p>
+    <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap">
+      <a href="mailto:contact@nidham.fr?subject=Question sur Nidham" class="btn-white">&#128140; Poser une question</a>
+      <a href="/#contact" class="btn-white-outline">&#128332; Rejoindre la beta</a>
+    </div>
+  </div>
+
+</div><!-- /page-wrapper -->
+
+<footer>
+  <div class="footer-inner">
+    <span class="footer-brand-sm">&#1606;&#1616;&#1592;&#1614;&#1575;&#1605; Nidham</span>
+    <div class="footer-links-sm">
+      <a href="/">Accueil</a>
+      <a href="/#fonctionnalites">Fonctionnalités</a>
+      <a href="/transparence.html">Transparence</a>
+      <a href="/faq.html" aria-current="page">FAQ</a>
+      <a href="https://github.com/BadreddineEK/MManager" target="_blank" rel="noopener">GitHub</a>
+      <a href="mailto:contact@nidham.fr">Contact</a>
+    </div>
+  </div>
+  <div class="footer-copy">&#169; 2026 Nidham &middot; Open source &middot; Waqf num&#233;rique &#129330; &middot; Donn&#233;es souveraines</div>
+</footer>
+
+<script>
+  function toggleFaq(btn) {
+    const item = btn.closest('.faq-item');
+    const wasOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+    if (!wasOpen) item.classList.add('open');
+  }
+</script>
+</body>
+</html>

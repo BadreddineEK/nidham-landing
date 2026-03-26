@@ -19,6 +19,36 @@
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231B4332'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='serif' font-size='36' fill='%23C9A84C'%3E%D9%86%3C/text%3E%3C/svg%3E" />
   <meta property="og:image" content="https://nidham.fr/og-image.svg" />
   <meta name="twitter:image" content="https://nidham.fr/og-image.svg" />
+  <!-- Google Analytics 4 — remplacer G-XXXXXXXXXX par votre vrai Measurement ID -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer=window.dataLayer||[];
+    function gtag(){dataLayer.push(arguments)}
+    gtag('js',new Date());
+    gtag('config','G-XXXXXXXXXX',{anonymize_ip:true});
+  </script>
+  <!-- JSON-LD — données structurées SoftwareApplication -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Nidham",
+    "url": "https://nidham.fr",
+    "description": "Outil de gestion tout-en-un pour les mosquées et associations islamiques françaises. École, cotisations, trésorerie, tableaux de bord.",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web, Raspberry Pi",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "EUR"
+    },
+    "inLanguage": "fr-FR",
+    "author": {
+      "@type": "Person",
+      "name": "Badreddine El Khalfaoui"
+    }
+  }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Amiri:wght@400;700&display=swap" rel="stylesheet" />
@@ -700,175 +730,76 @@
   <div class="section-header">
     <span class="section-tag">Transparence financière</span>
     <h2>Soutenir Nidham</h2>
-    <p class="section-sub">Le logiciel est et restera gratuit. Si vous souhaitez contribuer, voici comment — et plus bas, où va chaque euro.</p>
+    <p class="section-sub">Nidham est développé bénévolement. Le logiciel est et restera gratuit — voici l'état des comptes.</p>
   </div>
 
   <div class="finance-center">
 
-    <!-- INTRO -->
-    <div class="finance-intro fade-in">
-      <p><strong>Nidham est développé bénévolement.</strong> L'outil, le code, les mises à jour — rien de tout ça n'a vocation à être payant. Ce qui peut coûter de l'argent, c'est uniquement l'infrastructure : domaine, comptes développeur, ou une prestation ponctuelle si le projet grandit.</p>
-      <p>Le modèle BYOD (chaque mosquée branche sa propre base de données) est conçu exprès pour que <strong>nous n'ayons jamais à payer des serveurs</strong> au nom des mosquées. Vous gérez votre infra, nous gérons le code. C'est plus sain pour tout le monde.</p>
-      <p>Les soutiens reçus couvrent uniquement les coûts listés ci-dessous. Tout est public, tout est détaillé.</p>
-    </div>
-
     <!-- COMPTEUR -->
-    <div class="finance-counter">
+    <div class="finance-counter fade-in">
       <div class="counter-card">
-        <div class="c-icon">💸</div>
+        <div class="c-icon">&#128184;</div>
         <div class="c-label">Frais engagés à ce jour</div>
-        <div class="c-value">18,70€</div>
+        <div class="c-value">18,70&#8364;</div>
         <div class="c-sub">Domaine nidham.fr — valable jusqu'en 2029</div>
       </div>
       <div class="counter-card">
-        <div class="c-icon">🤲</div>
+        <div class="c-icon">&#129330;</div>
         <div class="c-label">Soutiens reçus</div>
-        <div class="c-value">0€</div>
+        <div class="c-value">0&#8364;</div>
         <div class="c-sub">Mis à jour publiquement</div>
       </div>
       <div class="counter-card alert">
-        <div class="c-icon">💬</div>
-        <div class="c-label">Ce que ça veut dire</div>
-        <div class="c-value" style="font-size:1rem;line-height:1.4">Chaque don aide à aller plus loin</div>
-        <div class="c-sub">Sans changer la gratuité du logiciel</div>
+        <div class="c-icon">&#128172;</div>
+        <div class="c-label">Développement</div>
+        <div class="c-value" style="font-size:1rem;line-height:1.4">100% bénévole</div>
+        <div class="c-sub">Code, mises à jour, déploiements</div>
       </div>
+    </div>
+
+    <!-- RÉSUMÉ -->
+    <div class="finance-intro fade-in" style="max-width:640px;margin:0 auto 32px;text-align:center">
+      <p>Le modèle BYOD garantit que <strong>nous ne gérons aucune donnée</strong> et <strong>ne payons aucun serveur</strong> au nom des mosquées. Chaque don couvre uniquement des frais d'infrastructure réels — domaine, matériel, comptes développeur pour l'app mobile.</p>
     </div>
 
     <!-- PALIERS -->
-    <p class="paliers-title">Comment soutenir ?</p>
-    <p class="paliers-sub">Aucune obligation. Ces paliers donnent un repère pour celles et ceux qui veulent contribuer sans friction.</p>
-    <div class="paliers-grid">
+    <div class="paliers-grid fade-in">
       <div class="palier-card">
-        <div class="palier-emoji">☕</div>
+        <div class="palier-emoji">&#9749;</div>
         <h3>Coup de pouce</h3>
-        <div class="palier-amount">5€</div>
+        <div class="palier-amount">5&#8364;</div>
         <p>Couvre quelques semaines de frais de domaine.</p>
       </div>
       <div class="palier-card featured">
-        <div class="palier-emoji">🌱</div>
+        <div class="palier-emoji">&#127807;</div>
         <h3>Soutien régulier</h3>
-        <div class="palier-amount">10€</div>
+        <div class="palier-amount">10&#8364;</div>
         <p>Avec 10 mosquées à ce niveau, les frais d'infra futurs sont couverts.</p>
       </div>
       <div class="palier-card">
-        <div class="palier-emoji">💪</div>
+        <div class="palier-emoji">&#128170;</div>
         <h3>Soutien fort</h3>
-        <div class="palier-amount">25€</div>
+        <div class="palier-amount">25&#8364;</div>
         <p>Accélère le développement des prochaines fonctionnalités.</p>
       </div>
       <div class="palier-card">
-        <div class="palier-emoji">🤝</div>
+        <div class="palier-emoji">&#129309;</div>
         <h3>Partenaire</h3>
         <div class="palier-amount">Libre</div>
-        <p>Une mosquée, une asso, ou envie d'une contribution différente ? On en parle.</p>
+        <p>Une contribution différente ? On en parle.</p>
       </div>
     </div>
 
-    <!-- GRAND ACCORDEON : OÙ VA L'ARGENT ? -->
-    <div class="master-accordion" id="masterAcc">
-      <button class="master-toggle" type="button" onclick="toggleMaster()">
-        <span>🔍 Où va l'argent exactement ? Voir le détail complet</span>
-        <span class="chev">▼</span>
-      </button>
-      <div class="master-content">
-        <div class="cost-blocks">
-
-          <div class="cost-block" onclick="toggleBlock(this)">
-            <div class="cost-block-header">
-              <div class="cost-block-left"><span class="cost-block-icon">🖥️</span><div><div class="cost-block-title">Matériel — Raspberry Pi par mosquée</div><div class="cost-block-sub">Coût unique, propriété de la mosquée</div></div></div>
-              <div class="cost-block-right"><span class="cost-amount">35–80€</span><span class="cost-badge now">Beta</span><span class="cost-chevron">▼</span></div>
-            </div>
-            <div class="cost-block-body">
-              <p>Nidham peut tourner sur un <strong>Raspberry Pi 4 ou 5</strong> installé dans les locaux de la mosquée. C'est un achat unique — la mosquée en est propriétaire. Pas d'abonnement, pas de dépendance à un serveur externe.</p>
-              <p>Si une mosquée ne peut pas assumer ce coût de départ, les soutiens reçus peuvent servir à l'aider.</p>
-              <ul>
-                <li>Raspberry Pi 4 (2 GB) : ~35€</li>
-                <li>Raspberry Pi 5 (4 GB, recommandé) : ~60–80€</li>
-                <li>Carte SD + alimentation : ~15€</li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="cost-block" onclick="toggleBlock(this)">
-            <div class="cost-block-header">
-              <div class="cost-block-left"><span class="cost-block-icon">⏱️</span><div><div class="cost-block-title">Temps de développement</div><div class="cost-block-sub">Aujourd'hui 100% bénévole</div></div></div>
-              <div class="cost-block-right"><span class="cost-amount">0€</span><span class="cost-badge now">Bénévole</span><span class="cost-chevron">▼</span></div>
-            </div>
-            <div class="cost-block-body">
-              <p>Le développement, les corrections, les évolutions et les déploiements sont faits sur le <strong>temps libre</strong>, par conviction.</p>
-              <p>Si le projet grandit, un besoin ponctuel peut apparaître : design, mobile, sécurité, tests. Dans ce cas, on privilégie d'abord les bénévoles, puis des freelances si nécessaire.</p>
-              <p>Tout montant engagé pour une prestation sera publié ici, avec le détail de ce qui a été fait.</p>
-            </div>
-          </div>
-
-          <div class="cost-block" onclick="toggleBlock(this)">
-            <div class="cost-block-header">
-              <div class="cost-block-left"><span class="cost-block-icon">🌐</span><div><div class="cost-block-title">Infrastructure actuelle — domaine &amp; emails</div><div class="cost-block-sub">Seul coût engagé à ce jour</div></div></div>
-              <div class="cost-block-right"><span class="cost-amount">18,70€</span><span class="cost-badge now">Payé</span><span class="cost-chevron">▼</span></div>
-            </div>
-            <div class="cost-block-body">
-              <p>Le domaine <strong>nidham.fr</strong> a été acheté sur OVH le 18 mars 2026, pour une durée de <strong>3 ans (jusqu'en 2029)</strong>. Coût total : <strong>18,70€</strong>, réglé une seule fois.</p>
-              <p>Les emails transactionnels passent par Brevo (plan gratuit, jusqu'à 300 mails/jour) — 0€/mois.</p>
-              <ul>
-                <li>nidham.fr — OVH, 3 ans (mars 2026 → 2029) : <strong>18,70€</strong></li>
-                <li>Hébergement du site : <strong>0€</strong> (GitHub Pages)</li>
-                <li>Emails transactionnels : <strong>0€/mois</strong> (Brevo gratuit)</li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="cost-block future" onclick="toggleBlock(this)">
-            <div class="cost-block-header">
-              <div class="cost-block-left"><span class="cost-block-icon">☁️</span><div><div class="cost-block-title">Hébergement cloud — si les données y sont stockées</div><div class="cost-block-sub">Non applicable avec le modèle BYOD</div></div></div>
-              <div class="cost-block-right"><span class="cost-amount future">0€ (BYOD)</span><span class="cost-badge later">Futur</span><span class="cost-chevron">▼</span></div>
-            </div>
-            <div class="cost-block-body">
-              <p>Grâce au modèle BYOD, <strong>nous ne payons rien pour héberger vos données</strong>. Chaque mosquée branche son propre compte Supabase — c'est leur infra, leur compte, leur coût éventuel.</p>
-              <p>Le <strong>free tier Supabase</strong> (compte gratuit, sans carte bancaire) couvre jusqu'à <strong>500 MB de stockage</strong>. En pratique, c'est suffisant pour environ <strong>500 à 800 familles ou adhérents</strong> avec plusieurs années d'historique — la grande majorité des mosquées françaises n'atteindra jamais cette limite.</p>
-              <p>Si votre association est très grande et dépasse cette limite : le plan Pro Supabase est <strong>25$/mois</strong>, géré et payé directement par la mosquée, sans intermédiaire.</p>
-              <p><strong>L'option Pi local reste toujours disponible et entièrement gratuite</strong>, sans limite de stockage.</p>
-            </div>
-          </div>
-
-          <div class="cost-block future" onclick="toggleBlock(this)">
-            <div class="cost-block-header">
-              <div class="cost-block-left"><span class="cost-block-icon">📱</span><div><div class="cost-block-title">Application mobile — comptes développeur</div><div class="cost-block-sub">Pour publier sur App Store &amp; Google Play</div></div></div>
-              <div class="cost-block-right"><span class="cost-amount future">~115€</span><span class="cost-badge later">Futur</span><span class="cost-chevron">▼</span></div>
-            </div>
-            <div class="cost-block-body">
-              <p>Publier une app nécessite des comptes développeur payants :</p>
-              <ul>
-                <li><strong>Apple Developer Program</strong> : ~99$/an — obligatoire pour iOS</li>
-                <li><strong>Google Play Console</strong> : ~25$ une seule fois — pour Android</li>
-              </ul>
-              <p>Ces frais ne seront engagés que si l'app est réellement développée, testée et prête à sortir.</p>
-            </div>
-          </div>
-
-          <div class="cost-block future" onclick="toggleBlock(this)">
-            <div class="cost-block-header">
-              <div class="cost-block-left"><span class="cost-block-icon">📌</span><div><div class="cost-block-title">Principe économique du projet</div><div class="cost-block-sub">Ce qui est gratuit, ce qui peut coûter</div></div></div>
-              <div class="cost-block-right"><span class="cost-amount future">Principe</span><span class="cost-badge later">Important</span><span class="cost-chevron">▼</span></div>
-            </div>
-            <div class="cost-block-body">
-              <p><strong>Ce qui reste toujours gratuit :</strong> le code, l'outil, les mises à jour, les nouvelles fonctionnalités. Nidham n'est pas un SaaS commercial.</p>
-              <p><strong>Ce qui peut coûter de l'argent :</strong> l'infrastructure (matériel, serveurs, stockage), les comptes développeur pour une app mobile, et ponctuellement une compétence externe si nécessaire.</p>
-              <p>Si les dons couvrent ces coûts, ils sont gratuits pour tout le monde. Sinon, la mosquée qui utilise un service spécifique (hébergement géré, app) peut être amenée à contribuer à l'infra qu'elle consomme.</p>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </div>
-    <!-- FIN GRAND ACCORDEON -->
-
-    <!-- CTA -->
-    <div class="finance-cta">
+    <!-- LIEN VERS PAGE COMPLÈTE + CTA -->
+    <div class="finance-cta fade-in">
       <div class="waqf-arabic">نِظَام</div>
-      <h3>Une question ou envie de contribuer ?</h3>
-      <p>Nidham publiera un suivi ouvert : frais engagés, soutiens reçus, et ce à quoi chaque euro a servi. Écrivez-nous pour soutenir, proposer de l'aide, ou simplement discuter du projet.</p>
-      <a href="mailto:contact@nidham.fr?subject=Soutenir Nidham" class="btn-primary">🤲 Nous écrire</a>
-      <p style="margin-top:12px;font-size:.8rem;color:var(--muted)">Barak Allahu fik pour votre intérêt.</p>
+      <h3>Tout est public, tout est détaillé</h3>
+      <p>Où va chaque euro, combien coûte le matériel, comment fonctionne le modèle économique — tout est expliqué sur la page dédiée.</p>
+      <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:8px">
+        <a href="/transparence.html" class="btn-primary" style="display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--green);border:2px solid var(--green)">&#128269; Transparence complète</a>
+        <a href="mailto:contact@nidham.fr?subject=Soutenir Nidham" class="btn-primary">&#129330; Nous écrire</a>
+      </div>
+      <p style="margin-top:14px;font-size:.8rem;color:var(--muted)">Barak Allahu fik pour votre intérêt.</p>
     </div>
 
   </div>
@@ -927,6 +858,8 @@
     <div class="footer-links-group">
       <h4>Projet</h4>
       <a href="#transparence">Transparence financière</a>
+      <a href="/transparence.html">Détail des coûts</a>
+      <a href="/faq.html">FAQ</a>
       <a href="https://github.com/BadreddineEK/MManager" target="_blank" rel="noopener">GitHub open source</a>
       <a href="#contact">Nous contacter</a>
     </div>
