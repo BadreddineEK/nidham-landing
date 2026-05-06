@@ -415,6 +415,7 @@
 <div class="nav-mobile" id="mobileMenu">
   <a href="#fonctionnalites" onclick="closeMenu()">Fonctionnalités</a>
   <a href="#mosquees" onclick="closeMenu()">Mosquées</a>
+  <a href="#tarifs" onclick="closeMenu()">Tarifs</a>
   <a href="#roadmap" onclick="closeMenu()">Roadmap</a>
   <a href="#transparence" onclick="closeMenu()">Transparence</a>
   <a href="https://app.nidham.fr" onclick="closeMenu()" target="_blank" rel="noopener">🚀 Créer mon espace</a>
@@ -430,7 +431,7 @@
     <a href="#fonctionnalites" class="btn-secondary">Voir les fonctionnalités</a>
   </div>
   <div class="hero-stats">
-    <div class="stat"><div class="stat-num">0€</div><div class="stat-label">Abonnement logiciel</div></div>
+    <div class="stat"><div class="stat-num">0€</div><div class="stat-label">Pour démarrer (Free)</div></div>
     <div class="stat"><div class="stat-num">100%</div><div class="stat-label">Données chez vous</div></div>
     <div class="stat"><div class="stat-num">5</div><div class="stat-label">Modules intégrés</div></div>
     <div class="stat"><div class="stat-num">4+</div><div class="stat-label">Mosquées actives</div></div>
@@ -600,26 +601,9 @@
     </div>
   </div>
   <div class="compare-wrap">
-    <table class="compare-table fade-in">
-      <thead>
-        <tr>
-          <th>Ce que vous gérez</th>
-          <th>🥧 Pi local</th>
-          <th>☁️ BYOD cloud</th>
-          <th>🔄 Hybride</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr><td>Vos données restent chez vous</td><td>&#10003; Oui (Pi local)</td><td>&#10003; Oui (votre compte Supabase)</td><td>&#10003; Oui</td></tr>
-        <tr><td>Accès depuis l'extérieur</td><td>Via tunnel sécurisé</td><td>&#10003; natif, depuis tout appareil</td><td>&#10003;</td></tr>
-        <tr><td>Zéro achat matériel</td><td>—</td><td>&#10003;</td><td>—</td></tr>
-        <tr><td>Backup automatique</td><td>Script à configurer</td><td>&#10003; Supabase auto</td><td>&#10003; chiffré AES</td></tr>
-        <tr><td>Capacité gratuite</td><td>Illimitée (disque Pi)</td><td>500 MB ≈ 500–800 familles</td><td>Illimitée (disque Pi)</td></tr>
-        <tr><td>Coût si dépassement</td><td>0€</td><td>25$/mois (Supabase Pro)</td><td>0€</td></tr>
-        <tr><td>Coût logiciel Nidham</td><td>0€</td><td>0€</td><td>0€</td></tr>
-        <tr><td>Nous touchons vos données</td><td>&#10007; jamais</td><td>&#10007; jamais</td><td>&#10007; jamais</td></tr>
-      </tbody>
-    </table>
+    <div class="finance-intro fade-in" style="max-width:680px;margin:32px auto 0;text-align:center;background:var(--green-xpale,#EEF7F1);border-radius:16px;padding:24px 28px;border:1px solid var(--border,#D4E8DB)">
+      <p style="font-size:.95rem;color:var(--dark)">💡 <strong>Vous choisissez votre mode</strong> — SaaS clé en main sur <a href="https://app.nidham.fr" style="color:var(--green)">app.nidham.fr</a>, ou auto-hébergé sur votre propre serveur. Dans les deux cas, même logiciel, même fonctionnalités, même sécurité.</p>
+    </div>
   </div>
 </section>
 
@@ -628,7 +612,7 @@
   <div class="section-header">
     <span class="section-tag" style="background:rgba(201,168,76,.2);color:var(--gold-light)">Nos engagements</span>
     <h2>Construit avec des valeurs</h2>
-    <p class="section-sub">Nidham n'est pas un SaaS commercial. C'est un projet communautaire avec des principes non négociables.</p>
+    <p class="section-sub">Nidham est un SaaS construit avec des valeurs. Pas de dark patterns, pas de rétention de données, pas d'enfermement propriétaire.</p>
   </div>
   <div class="values-grid">
     <div class="value-card fade-in"><div class="icon">🏠</div><h3>Vos données, chez vous</h3><p>Dans tous les modes, vos données vous appartiennent. Nous n'hébergeons rien, nous ne lisons rien, nous n'avons aucun accès.</p></div>
@@ -636,6 +620,73 @@
     <div class="value-card fade-in fade-in-delay-2"><div class="icon">🤲</div><h3>Waqf numérique</h3><p>Le code est open source. Le projet vit par conviction et par la confiance des mosquées. Il n'a pas vocation à devenir une startup.</p></div>
     <div class="value-card fade-in fade-in-delay-3"><div class="icon">🔓</div><h3>Zéro enfermement</h3><p>Exportez toutes vos données en CSV à tout moment. Si vous partez, vous emportez tout. Aucune rétention, aucun format propriétaire.</p></div>
   </div>
+</section>
+
+<!-- TARIFS -->
+<section class="how" id="tarifs" style="background:var(--bg,#F7FAF8)">
+  <div class="section-header">
+    <span class="section-tag">Tarifs transparents</span>
+    <h2>Simple et honnête</h2>
+    <p class="section-sub">Essai 14 jours gratuit sur tous les plans — sans carte bancaire. Résiliez quand vous voulez.</p>
+  </div>
+  <div class="how-modes" style="grid-template-columns:repeat(3,1fr);max-width:960px;margin:0 auto">
+
+    <div class="mode-card fade-in">
+      <span class="mode-badge-top now" style="background:var(--green-pale,#D8F3DC);color:var(--green)">Gratuit pour toujours</span>
+      <span class="mode-emoji">🌱</span>
+      <h3>Nidham Free</h3>
+      <div class="mode-cost" style="margin:12px 0"><span class="mode-cost-value" style="font-size:2rem">0€</span><span class="mode-cost-label" style="margin-left:6px">/mois</span></div>
+      <p style="font-size:.85rem;color:var(--muted);margin-bottom:14px">Pour les petites associations qui démarrent.</p>
+      <div class="mode-detail">✓ Jusqu'à 30 familles</div>
+      <div class="mode-detail">✓ 1 utilisateur</div>
+      <div class="mode-detail">✓ Trésorerie de base</div>
+      <div class="mode-detail">✓ Portail public KPI</div>
+      <div class="mode-detail" style="color:#aaa">✗ École, cotisations</div>
+      <div class="mode-detail" style="color:#aaa">✗ Import bancaire, audit</div>
+      <a href="https://app.nidham.fr" class="btn-primary" style="margin-top:18px;width:100%;justify-content:center;background:#374151;font-size:.9rem" target="_blank" rel="noopener">Démarrer gratuitement</a>
+    </div>
+
+    <div class="mode-card featured fade-in fade-in-delay-1">
+      <span class="mode-badge-top popular">⭐ Le plus populaire</span>
+      <span class="mode-emoji">🕌</span>
+      <h3>Nidham Standard</h3>
+      <div class="mode-cost" style="margin:12px 0">
+        <span class="mode-cost-value" style="font-size:2rem;color:var(--gold)">39€</span><span class="mode-cost-label" style="margin-left:6px">/mois</span>
+        <div style="font-size:.78rem;color:var(--muted);margin-top:3px">ou 390€/an (2 mois offerts)</div>
+      </div>
+      <p style="font-size:.85rem;color:var(--muted);margin-bottom:14px">L'essentiel pour une mosquée active.</p>
+      <div class="mode-detail">✓ Jusqu'à 100 familles</div>
+      <div class="mode-detail">✓ 5 utilisateurs</div>
+      <div class="mode-detail">✓ Trésorerie complète + import bancaire CSV</div>
+      <div class="mode-detail">✓ École (classes, appel, Coran, appréciations)</div>
+      <div class="mode-detail">✓ Cotisations + reçus PDF</div>
+      <div class="mode-detail">✓ Emails groupes + journal d'audit</div>
+      <div class="mode-detail" style="color:#aaa">✗ Export FEC légal, SMS, portail famille</div>
+      <a href="https://app.nidham.fr" class="btn-primary" style="margin-top:18px;width:100%;justify-content:center;font-size:.9rem" target="_blank" rel="noopener">Essai 14j gratuit →</a>
+    </div>
+
+    <div class="mode-card fade-in fade-in-delay-2">
+      <span class="mode-badge-top" style="background:rgba(201,168,76,.15);color:var(--gold)">Illimité</span>
+      <span class="mode-emoji">🚀</span>
+      <h3>Nidham Pro</h3>
+      <div class="mode-cost" style="margin:12px 0">
+        <span class="mode-cost-value" style="font-size:2rem;color:var(--gold)">79€</span><span class="mode-cost-label" style="margin-left:6px">/mois</span>
+        <div style="font-size:.78rem;color:var(--muted);margin-top:3px">ou 790€/an (2 mois offerts)</div>
+      </div>
+      <p style="font-size:.85rem;color:var(--muted);margin-bottom:14px">Pour les mosquées ambitieuses, sans limites.</p>
+      <div class="mode-detail">✓ Familles et utilisateurs illimités</div>
+      <div class="mode-detail">✓ Tout Standard inclus</div>
+      <div class="mode-detail">✓ Export FEC légal (Art. A47 A-1 LPF)</div>
+      <div class="mode-detail">✓ Portail famille (espace adhérent connecté)</div>
+      <div class="mode-detail">✓ SMS (150/mois inclus)</div>
+      <div class="mode-detail">✓ Analytics et rapports avancés</div>
+      <a href="https://app.nidham.fr" class="btn-primary" style="margin-top:18px;width:100%;justify-content:center;background:var(--green);font-size:.9rem" target="_blank" rel="noopener">Essai 14j gratuit →</a>
+    </div>
+
+  </div>
+  <p style="text-align:center;margin-top:28px;font-size:.82rem;color:var(--muted)">
+    Fédération multi-sites (plusieurs mosquées) ? <a href="mailto:contact@nidham.fr?subject=Nidham Federation" style="color:var(--green)">Contactez-nous pour un devis</a>
+  </p>
 </section>
 
 <!-- ROADMAP — TIMELINE CENTRÉE -->
@@ -821,14 +872,14 @@
       <div class="form-group"><label>Email *</label><input type="email" name="email" placeholder="contact@mosquee.fr" required /></div>
       <div class="form-group"><label>Ville</label><input type="text" name="ville" placeholder="Lyon, Paris, Marseille…" /></div>
       <div class="form-group"><label>Taille approximative</label><select name="taille"><option value="">-- Sélectionner --</option><option>Moins de 50 familles</option><option>50 à 150 familles</option><option>150 à 300 familles</option><option>Plus de 300 familles</option></select></div>
-      <div class="form-group"><label>Mode de déploiement souhaité</label><select name="mode"><option value="">-- Je ne sais pas encore --</option><option>Pi local (données dans nos locaux)</option><option>Cloud BYOD (accès partout, zéro matériel)</option><option>Hybride (Pi + backup cloud)</option></select></div>
+      <div class="form-group"><label>Mode de déploiement souhaité</label><select name="mode"><option value="">-- Je ne sais pas encore --</option><option>SaaS cloud — app.nidham.fr (recommandé)</option><option>Pi local (données dans nos locaux)</option><option>Je ne sais pas encore</option></select></div>
       <div class="form-group"><label>Message (optionnel)</label><textarea name="message" placeholder="Parlez-nous de votre situation actuelle, vos outils existants, vos besoins…"></textarea></div>
       <div id="formMsg" style="display:none;padding:12px 16px;border-radius:9px;font-size:.9rem;font-weight:500;margin-bottom:4px"></div>
       <button type="submit" id="formBtn" class="btn-primary" style="width:100%;justify-content:center;background:var(--green);color:var(--white)">Envoyer ma demande &#128332;</button>
     </form>
     <div class="contact-info fade-in fade-in-delay-1">
       <h3>On vous répond sous 48h</h3>
-      <p>Nidham est en phase beta avec notre première mosquée pilote. Nous intégrons progressivement de nouvelles associations pour garantir un accompagnement soigné à chacune, plutôt que de déployer vite et mal.</p>
+      <p>Le SaaS est disponible directement sur <a href="https://app.nidham.fr" style="color:var(--green)">app.nidham.fr</a> — essai 14j gratuit, sans accompagnement nécessaire. Ce formulaire est pour les mosquées qui préfèrent un déploiement Pi local ou souhaitent un suivi personnalisé.</p>
       <div class="contact-detail"><span class="icon">📧</span><span>contact@nidham.fr</span></div>
       <div class="contact-detail"><span class="icon">📍</span><span>Région Auvergne-Rhône-Alpes, France</span></div>
       <div class="contact-detail"><span class="icon">💻</span><a href="https://github.com/BadreddineEK/MManager" target="_blank" rel="noopener" style="color:var(--muted);text-decoration:none">Code source ouvert sur GitHub</a></div>
