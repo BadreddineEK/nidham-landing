@@ -1,0 +1,25 @@
+name: Revert landing page
+
+on:
+  workflow_dispatch:
+
+jobs:
+  revert:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Configure git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+      - name: Revert commits
+        run: |
+          git revert 6cb9099 --no-edit
+          git revert 2da3028 --no-edit
+      - name: Push
+        run: git push
