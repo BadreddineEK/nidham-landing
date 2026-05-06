@@ -4,17 +4,17 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Nidham — L'outil de gestion pour les mosquées françaises</title>
-  <meta name="description" content="Nidham (نِظَام) est l'outil de gestion tout-en-un pour les mosquées et associations islamiques françaises. École, cotisations, trésorerie, KPI — pensé pour vous." />
+  <meta name="description" content="Nidham (نِظَام) est l’outil de gestion tout-en-un pour les mosquées et associations islamiques françaises. École, cotisations, trésorerie, KPI — vos données restent chez vous, pour toujours." />
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://nidham.fr/" />
   <meta property="og:title" content="Nidham — L'outil de gestion pour les mosquées françaises" />
-  <meta property="og:description" content="Remplacez vos fichiers Excel par un outil professionnel. École, cotisations, trésorerie — tout dans un seul outil." />
+  <meta property="og:description" content="Remplacez vos fichiers Excel par un outil professionnel souverain. École, cotisations, trésorerie — 0€ d'abonnement logiciel." />
   <meta property="og:locale" content="fr_FR" />
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Nidham — L'outil de gestion pour les mosquées françaises" />
-  <meta name="twitter:description" content="Remplacez vos fichiers Excel par un outil professionnel. École, cotisations, trésorerie — tout dans un seul outil." />
+  <meta name="twitter:description" content="Remplacez vos fichiers Excel par un outil professionnel souverain. École, cotisations, trésorerie — 0€ d'abonnement logiciel." />
   <link rel="canonical" href="https://nidham.fr/" />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231B4332'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='serif' font-size='36' fill='%23C9A84C'%3E%D9%86%3C/text%3E%3C/svg%3E" />
   <meta property="og:image" content="https://nidham.fr/og-image.svg" />
@@ -36,11 +36,16 @@
     "url": "https://nidham.fr",
     "description": "Outil de gestion tout-en-un pour les mosquées et associations islamiques françaises. École, cotisations, trésorerie, tableaux de bord.",
     "applicationCategory": "BusinessApplication",
-    "operatingSystem": "Web",
+    "operatingSystem": "Web, Raspberry Pi",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "EUR"
+    },
     "inLanguage": "fr-FR",
     "author": {
       "@type": "Person",
-      "name": "Badreddine El Khamlichi"
+      "name": "Badreddine El Khalfaoui"
     }
   }
   </script>
@@ -400,8 +405,7 @@
     <a href="#mosquees">Mosquées</a>
     <a href="#roadmap">Roadmap</a>
     <a href="#transparence">Transparence</a>
-    <a href="#contact">Contact</a>
-    <a href="https://app.nidham.fr" target="_blank" rel="noopener" class="nav-cta">Accéder à Nidham →</a>
+    <a href="#contact" class="nav-cta">Intégrer ma mosquée</a>
   </div>
   <button class="nav-burger" id="burger" aria-label="Menu" onclick="toggleMenu()">
     <span></span><span></span><span></span>
@@ -413,8 +417,7 @@
   <a href="#mosquees" onclick="closeMenu()">Mosquées</a>
   <a href="#roadmap" onclick="closeMenu()">Roadmap</a>
   <a href="#transparence" onclick="closeMenu()">Transparence</a>
-  <a href="#contact" onclick="closeMenu()">Contact</a>
-  <a href="https://app.nidham.fr" target="_blank" rel="noopener" onclick="closeMenu()">Accéder à Nidham →</a>
+  <a href="#contact" onclick="closeMenu()">Intégrer ma mosquée &#128332;</a>
 </div>
 
 <!-- HERO -->
@@ -423,10 +426,11 @@
   <h1>La gestion de votre mosquée,<br /><span>enfin à sa place.</span></h1>
   <p>École, cotisations, trésorerie, tableaux de bord — tout dans un seul outil pensé pour les associations islamiques françaises. Vos données restent chez vous. Pour toujours.</p>
   <div class="hero-actions">
-    <a href="https://app.nidham.fr" target="_blank" rel="noopener" class="btn-primary">🕌 Accéder à Nidham</a>
+    <a href="#contact" class="btn-primary">&#128332; Intégrer ma mosquée</a>
     <a href="#fonctionnalites" class="btn-secondary">Voir les fonctionnalités</a>
   </div>
   <div class="hero-stats">
+    <div class="stat"><div class="stat-num">0€</div><div class="stat-label">Abonnement logiciel</div></div>
     <div class="stat"><div class="stat-num">100%</div><div class="stat-label">Données chez vous</div></div>
     <div class="stat"><div class="stat-num">5</div><div class="stat-label">Modules intégrés</div></div>
     <div class="stat"><div class="stat-num">1</div><div class="stat-label">Mosquée pilote en beta</div></div>
@@ -468,7 +472,50 @@
     <div class="feature-card fade-in fade-in-delay-1"><div class="feature-icon">&#9925;</div><h3>Mode cloud BYOD</h3><p>La mosquée branche sa propre base Supabase (gratuit). Zéro donnée sur nos serveurs, accès depuis partout, toujours gratuit.</p><span class="feature-tag soon">&#128280; En développement</span></div>
   </div>
   <div style="text-align:center;margin-top:52px">
-    <a href="https://app.nidham.fr" target="_blank" rel="noopener" class="btn-primary" style="background:var(--green);color:var(--white)">🕌 Accéder à Nidham</a>
+    <a href="#contact" class="btn-primary" style="background:var(--green);color:var(--white)">&#128332; Intégrer ma mosquée — c'est gratuit</a>
+  </div>
+</section>
+
+<!-- APERÇU DE L'OUTIL — masqué jusqu'à avoir de vraies captures -->
+<section class="demo" id="apercu" style="display:none" aria-hidden="true">
+  <div class="section-header">
+    <span class="section-tag">Aperçu</span>
+    <h2>À quoi ça ressemble concrètement ?</h2>
+    <p class="section-sub">Une démo vidéo et des captures d'écran arrivent très bientôt. En attendant, voici les vues principales de l'outil.</p>
+  </div>
+
+  <!-- Vidéo placeholder -->
+  <div class="demo-video-placeholder fade-in">
+    <div class="demo-play-btn">&#9654;</div>
+    <div class="demo-video-label"><strong>Démo vidéo</strong> — à venir <span class="demo-coming-badge">&#8987; Bientôt disponible</span></div>
+  </div>
+
+  <!-- Captures d'écran placeholders -->
+  <div class="demo-screens">
+    <div class="demo-screen fade-in">
+      <div class="demo-screen-icon">&#127979;</div>
+      <div class="demo-screen-label">École</div>
+      <div class="demo-screen-sub">Suivi par famille, niveau, paiement</div>
+      <span class="demo-coming-badge">&#128247; Capture à venir</span>
+    </div>
+    <div class="demo-screen fade-in fade-in-delay-1">
+      <div class="demo-screen-icon">&#128200;</div>
+      <div class="demo-screen-label">Tableau de bord KPI</div>
+      <div class="demo-screen-sub">Vue synthétique de la mosquée</div>
+      <span class="demo-coming-badge">&#128247; Capture à venir</span>
+    </div>
+    <div class="demo-screen fade-in fade-in-delay-2">
+      <div class="demo-screen-icon">&#128196;</div>
+      <div class="demo-screen-label">Reçus fiscaux PDF</div>
+      <div class="demo-screen-sub">Générés et envoyés par email</div>
+      <span class="demo-coming-badge">&#128247; Capture à venir</span>
+    </div>
+    <div class="demo-screen fade-in fade-in-delay-3">
+      <div class="demo-screen-icon">&#128179;</div>
+      <div class="demo-screen-label">Trésorerie</div>
+      <div class="demo-screen-sub">Journal entrées/sorties, cagnottes</div>
+      <span class="demo-coming-badge">&#128247; Capture à venir</span>
+    </div>
   </div>
 </section>
 
@@ -488,10 +535,10 @@
       <span class="demo-coming-badge" style="margin-top:12px">&#128202; Page KPI publique — à venir</span>
     </div>
     <div class="mosque-card placeholder fade-in fade-in-delay-1">
-      <div style="font-size:2rem">🕌</div>
+      <div style="font-size:2rem">&#128332;</div>
       <div style="font-weight:700;color:var(--dark);font-size:.95rem">Votre mosquée ici</div>
-      <div style="font-size:.82rem;color:var(--muted);max-width:180px">Rejoignez la beta — déploiement accompagné.</div>
-      <a href="#contact" class="btn-primary" style="margin-top:10px;font-size:.82rem;padding:9px 20px">Nous contacter</a>
+      <div style="font-size:.82rem;color:var(--muted);max-width:180px">Rejoignez la beta — déploiement accompagné, gratuit.</div>
+      <a href="#contact" class="btn-primary" style="margin-top:10px;font-size:.82rem;padding:9px 20px">Nous rejoindre</a>
     </div>
   </div>
 
@@ -581,12 +628,12 @@
   <div class="section-header">
     <span class="section-tag" style="background:rgba(201,168,76,.2);color:var(--gold-light)">Nos engagements</span>
     <h2>Construit avec des valeurs</h2>
-    <p class="section-sub">Nidham est construit avec des principes non négociables — souveraineté des données, conformité française, transparence totale.</p>
+    <p class="section-sub">Nidham n'est pas un SaaS commercial. C'est un projet communautaire avec des principes non négociables.</p>
   </div>
   <div class="values-grid">
     <div class="value-card fade-in"><div class="icon">🏠</div><h3>Vos données, chez vous</h3><p>Dans tous les modes, vos données vous appartiennent. Nous n'hébergeons rien, nous ne lisons rien, nous n'avons aucun accès.</p></div>
     <div class="value-card fade-in fade-in-delay-1"><div class="icon">🇫🇷</div><h3>Pensé pour la France</h3><p>Régime fiscal 1901 et 1905, reçus conformes, terminologie adaptée. Pas une traduction d'un outil étranger.</p></div>
-    <div class="value-card fade-in fade-in-delay-2"><div class="icon">🤲</div><h3>Waqf numérique</h3><p>Le code est open source. Le projet vit par conviction et par la confiance des mosquées qui nous font confiance.</p></div>
+    <div class="value-card fade-in fade-in-delay-2"><div class="icon">🤲</div><h3>Waqf numérique</h3><p>Le code est open source. Le projet vit par conviction et par la confiance des mosquées. Il n'a pas vocation à devenir une startup.</p></div>
     <div class="value-card fade-in fade-in-delay-3"><div class="icon">🔓</div><h3>Zéro enfermement</h3><p>Exportez toutes vos données en CSV à tout moment. Si vous partez, vous emportez tout. Aucune rétention, aucun format propriétaire.</p></div>
   </div>
 </section>
@@ -674,7 +721,7 @@
 
   </div>
   <div style="text-align:center;margin-top:52px">
-    <a href="https://app.nidham.fr" target="_blank" rel="noopener" class="btn-primary" style="background:var(--green);color:var(--white)">🕌 Accéder à Nidham</a>
+    <a href="#contact" class="btn-primary" style="background:var(--green);color:var(--white)">&#128332; Rejoindre la beta — accompagnement gratuit</a>
   </div>
 </section>
 
@@ -683,7 +730,7 @@
   <div class="section-header">
     <span class="section-tag">Transparence financière</span>
     <h2>Soutenir Nidham</h2>
-    <p class="section-sub">Nidham est développé bénévolement. Le logiciel est et restera accessible — voici l'état des comptes.</p>
+    <p class="section-sub">Nidham est développé bénévolement. Le logiciel est et restera gratuit — voici l'état des comptes.</p>
   </div>
 
   <div class="finance-center">
@@ -743,7 +790,7 @@
       </div>
     </div>
 
-    <!-- CTA -->
+    <!-- LIEN VERS PAGE COMPLÈTE + CTA -->
     <div class="finance-cta fade-in">
       <div class="waqf-arabic">نِظَام</div>
       <h3>Tout est public, tout est détaillé</h3>
@@ -761,6 +808,190 @@
 <!-- CONTACT -->
 <section class="contact" id="contact">
   <div class="section-header">
-    <span class="section-tag">Contact</span>
-    <h2>Une question ? Parlons-en.</h2>
-    <p class="se
+    <span class="section-tag">Rejoindre la beta</span>
+    <h2>Votre mosquée est intéressée ?</h2>
+    <p class="section-sub">Laissez-nous vos coordonnées — on vous recontacte sous 48h pour une présentation et discuter du déploiement.</p>
+  </div>
+  <div class="contact-grid">
+    <form class="contact-form fade-in" id="contactForm" action="https://formspree.io/f/xbdzwoay" method="POST">
+      <!-- Honeypot anti-spam -->
+      <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
+      <div class="form-group"><label>Nom de la mosquée / association *</label><input type="text" name="mosquee" placeholder="Mosquée Al-Nour de Lyon" required /></div>
+      <div class="form-group"><label>Votre nom *</label><input type="text" name="nom" placeholder="Prénom Nom" required /></div>
+      <div class="form-group"><label>Email *</label><input type="email" name="email" placeholder="contact@mosquee.fr" required /></div>
+      <div class="form-group"><label>Ville</label><input type="text" name="ville" placeholder="Lyon, Paris, Marseille…" /></div>
+      <div class="form-group"><label>Taille approximative</label><select name="taille"><option value="">-- Sélectionner --</option><option>Moins de 50 familles</option><option>50 à 150 familles</option><option>150 à 300 familles</option><option>Plus de 300 familles</option></select></div>
+      <div class="form-group"><label>Mode de déploiement souhaité</label><select name="mode"><option value="">-- Je ne sais pas encore --</option><option>Pi local (données dans nos locaux)</option><option>Cloud BYOD (accès partout, zéro matériel)</option><option>Hybride (Pi + backup cloud)</option></select></div>
+      <div class="form-group"><label>Message (optionnel)</label><textarea name="message" placeholder="Parlez-nous de votre situation actuelle, vos outils existants, vos besoins…"></textarea></div>
+      <div id="formMsg" style="display:none;padding:12px 16px;border-radius:9px;font-size:.9rem;font-weight:500;margin-bottom:4px"></div>
+      <button type="submit" id="formBtn" class="btn-primary" style="width:100%;justify-content:center;background:var(--green);color:var(--white)">Envoyer ma demande &#128332;</button>
+    </form>
+    <div class="contact-info fade-in fade-in-delay-1">
+      <h3>On vous répond sous 48h</h3>
+      <p>Nidham est en phase beta avec notre première mosquée pilote. Nous intégrons progressivement de nouvelles associations pour garantir un accompagnement soigné à chacune, plutôt que de déployer vite et mal.</p>
+      <div class="contact-detail"><span class="icon">📧</span><span>contact@nidham.fr</span></div>
+      <div class="contact-detail"><span class="icon">📍</span><span>Région Auvergne-Rhône-Alpes, France</span></div>
+      <div class="contact-detail"><span class="icon">💻</span><a href="https://github.com/BadreddineEK/MManager" target="_blank" rel="noopener" style="color:var(--muted);text-decoration:none">Code source ouvert sur GitHub</a></div>
+      <div class="contact-beta">
+        <strong>🎁 Phase beta — accompagnement gratuit</strong>
+        <p>Les mosquées pilotes bénéficient d'un déploiement accompagné, d'une formation du bureau et d'un suivi pendant les premiers mois d'utilisation.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="footer-logo"><span>نِظَام</span> Nidham</div>
+      <p>L'outil de gestion pour les mosquées et associations islamiques françaises. Open source, souverain, bénévole.</p>
+    </div>
+    <div class="footer-links-group">
+      <h4>Produit</h4>
+      <a href="#fonctionnalites">Fonctionnalités</a>
+      <a href="#apercu">Aperçu de l'outil</a>
+      <a href="#mosquees">Mosquées partenaires</a>
+      <a href="#comment-ca-marche">Comment ça marche</a>
+      <a href="#roadmap">Roadmap</a>
+    </div>
+    <div class="footer-links-group">
+      <h4>Projet</h4>
+      <a href="#transparence">Transparence financière</a>
+      <a href="/transparence.html">Détail des coûts</a>
+      <a href="/faq.html">FAQ</a>
+      <a href="https://github.com/BadreddineEK/MManager" target="_blank" rel="noopener">GitHub open source</a>
+      <a href="#contact">Nous contacter</a>
+    </div>
+    <div class="footer-links-group">
+      <h4>Contact</h4>
+      <a href="mailto:contact@nidham.fr">contact@nidham.fr</a>
+      <a href="#contact">Rejoindre la beta</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Nidham · Waqf numérique 🤲 · <a href="https://github.com/BadreddineEK/MManager" target="_blank" rel="noopener">Open source</a></span>
+    <span>Données souveraines · Conforme RGPD · Loi 1901/1905</span>
+  </div>
+</footer>
+
+<script>
+  /* ── Nav scroll shadow ── */
+  const mainNav = document.getElementById('mainNav');
+  window.addEventListener('scroll', () => {
+    mainNav.classList.toggle('scrolled', window.scrollY > 20);
+  }, { passive: true });
+
+  /* ── Hamburger menu ── */
+  function toggleMenu() {
+    const menu = document.getElementById('mobileMenu');
+    const burger = document.getElementById('burger');
+    const open = menu.classList.toggle('open');
+    burger.setAttribute('aria-expanded', open);
+    burger.innerHTML = open ? '✕' : '&#9776;';
+    document.body.style.overflow = open ? 'hidden' : '';
+  }
+  function closeMenu() {
+    const menu = document.getElementById('mobileMenu');
+    const burger = document.getElementById('burger');
+    menu.classList.remove('open');
+    burger.setAttribute('aria-expanded', 'false');
+    burger.innerHTML = '&#9776;';
+    document.body.style.overflow = '';
+  }
+
+  /* ── Active nav link on scroll ── */
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-links a[href^="#"], .nav-mobile a[href^="#"]');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => {
+      if (window.scrollY >= s.offsetTop - 120) current = s.getAttribute('id');
+    });
+    navLinks.forEach(a => {
+      a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+    });
+  }, { passive: true });
+
+  /* ── Fade-in on scroll (IntersectionObserver) ── */
+  const fadeEls = document.querySelectorAll('.fade-in');
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    fadeEls.forEach(el => io.observe(el));
+  } else {
+    fadeEls.forEach(el => el.classList.add('visible'));
+  }
+
+  /* ── Finance accordion (master + blocks) ── */
+  function toggleMaster() {
+    document.getElementById('masterAcc').classList.toggle('open');
+  }
+  function toggleBlock(el) {
+    const wasOpen = el.classList.contains('open');
+    document.querySelectorAll('.cost-block.open').forEach(b => b.classList.remove('open'));
+    if (!wasOpen) el.classList.add('open');
+  }
+
+  /* ── Contact form feedback ── */
+  (function() {
+    var form = document.getElementById('contactForm');
+    if (!form) return;
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      var btn = document.getElementById('formBtn');
+      var msg = document.getElementById('formMsg');
+      btn.disabled = true;
+      btn.textContent = 'Envoi en cours…';
+      msg.style.display = 'none';
+      fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      })
+      .then(function(r) {
+        if (r.ok) {
+          msg.style.background = 'var(--green-pale)';
+          msg.style.color = 'var(--green-mid)';
+          msg.style.border = '1px solid var(--green-light)';
+          msg.textContent = '✅ Votre demande a bien été envoyée ! On vous recontacte sous 48h.';
+          msg.style.display = 'block';
+          form.reset();
+          btn.textContent = 'Envoyer ma demande 🕌';
+          btn.disabled = false;
+        } else {
+          return r.json().then(function(data) { throw data; });
+        }
+      })
+      .catch(function(err) {
+        msg.style.background = '#FFF0F0';
+        msg.style.color = '#B00020';
+        msg.style.border = '1px solid #FFCDD2';
+        msg.textContent = (err && err.errors) ? err.errors.map(function(x){ return x.message; }).join(', ') : 'Une erreur est survenue. Écrivez-nous à contact@nidham.fr';
+        msg.style.display = 'block';
+        btn.textContent = 'Envoyer ma demande 🕌';
+        btn.disabled = false;
+      });
+    });
+  })();
+
+  /* ── Smooth scroll for anchor links ── */
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        closeMenu();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+</script>
+</body>
+</html>
